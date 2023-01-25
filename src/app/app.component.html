@@ -1,0 +1,275 @@
+<ion-app>
+  <!-- Landing Page Menu -->
+  <ion-menu side="start" menuId="landingPageMenu" contentId="main">
+    <ion-header>
+      <ion-toolbar color="dark" class="pt-3">
+        <ion-buttons>
+          <ion-button (click)="closeSideDrawer('landingPageMenu')">
+            <ion-icon name="arrow-back-outline" slot="icon-only"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <!-- Header -->
+        <ion-list-header>
+          <ion-label>Learn More</ion-label>
+        </ion-list-header>
+        <!-- Learners -->
+        <ion-menu-toggle>
+          <ion-item routerLink="/auth">
+            <ion-icon name="walk" slot="start"></ion-icon>
+            <ion-label>Learners</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <!-- Parents -->
+        <ion-menu-toggle>
+          <ion-item routerLink="/auth">
+            <ion-icon name="people" slot="start"></ion-icon>
+            <ion-label>Parents</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <!-- Adults -->
+        <ion-menu-toggle>
+          <ion-item routerLink="/auth">
+            <ion-icon name="man" slot="start"></ion-icon>
+            <ion-label>Adults</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <!-- Questionnaires -->
+        <ion-menu-toggle>
+          <ion-item routerLink="/auth">
+            <ion-icon name="list" slot="start"></ion-icon>
+            <ion-label>Questionnaires</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <!-- Schools -->
+        <ion-menu-toggle>
+          <ion-item routerLink="/auth">
+            <ion-icon name="library" slot="start"></ion-icon>
+            <ion-label>Schools</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <!-- Enterprises -->
+        <ion-menu-toggle>
+          <ion-item routerLink="/auth">
+            <ion-icon name="business" slot="start"></ion-icon>
+            <ion-label>Enterprises</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <!-- Fundamentals -->
+        <ion-menu-toggle>
+          <ion-item routerLink="/auth">
+            <ion-icon name="easel" slot="start"></ion-icon>
+            <ion-label>Fundamentals</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <!-- Pychometric -->
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/auth">
+            <ion-icon name="newspaper" slot="start"></ion-icon>
+            <ion-label>Pychometrics</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <hr>
+        <!-- Login -->
+        <ion-menu-toggle>
+          <ion-item routerLink="/auth">
+            <ion-icon name="log-in" slot="start"></ion-icon>
+            <ion-label>Login</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <!-- Create Account -->
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/auth/signup">
+            <ion-icon name="person-add" slot="start"></ion-icon>
+            <ion-label>Sign Up</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <hr>
+        <!-- Help -->
+        <ion-menu-toggle>
+          <ion-item button (click)="presentAlert('help')" detail="false">
+            <ion-icon name="help" slot="start"></ion-icon>
+            <ion-label>Help</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <!-- About -->
+        <ion-menu-toggle>
+          <ion-item button (click)="presentAlert('about')" detail="false">
+            <ion-icon name="information" slot="start"></ion-icon>
+            <ion-label>About</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <!-- Main Menu -->
+  <ion-menu side="start" menuId="mainMenu" contentId="main">
+    <ion-header>
+      <ion-toolbar color="dark" class="pt-3">
+        <ion-buttons>
+          <ion-button (click)="closeSideDrawer('mainMenu')">
+            <ion-icon name="arrow-back-outline" slot="icon-only"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <!-- Header::Quick Access -->
+        <ion-list-header>
+          <ion-label>Quick Access</ion-label>
+        </ion-list-header>
+        <!-- Home -->
+        <ion-menu-toggle>
+          <ion-item routerLink="/dashboard/tabs/home">
+            <ion-icon slot="start" name="home"></ion-icon>
+            <ion-label>Home</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <!-- Learners -->
+        <ion-menu-toggle>
+          <ion-item routerLink="/dashboard/tabs/courses">
+            <ion-icon slot="start" name="grid"></ion-icon>
+            <ion-label>Courses</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <!-- Adults -->
+        <ion-menu-toggle>
+          <ion-item routerLink="/dashboard/tabs/career-transition">
+            <ion-icon name="swap-horizontal" slot="start"></ion-icon>
+            <ion-label>Change Careers</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <!-- Questionnaires -->
+        <ion-menu-toggle>
+          <ion-item routerLink="/dashboard/tabs/questionniare">
+            <ion-icon name="reader" slot="start"></ion-icon>
+            <ion-label>Questionnaires</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <!-- Schools -->
+        <ion-menu-toggle>
+          <ion-item routerLink="/dashboard/tabs/interview">
+            <ion-icon name="newspaper" slot="start"></ion-icon>
+            <ion-label>Interviews</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <!-- Calculator -->
+        <!-- <ion-menu-toggle>
+          <ion-item routerLink="/dashboard/tabs/">
+            <ion-icon name="calculator" slot="start"></ion-icon>
+            <ion-label>Calculator</ion-label>
+          </ion-item>
+        </ion-menu-toggle> -->
+        <!-- Applications -->
+        <ion-menu-toggle>
+          <ion-item routerLink="/dashboard/tabs/chats">
+            <ion-icon name="document" slot="start"></ion-icon>
+            <ion-label>Chats</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <!-- Bursaries -->
+        <!-- <ion-menu-toggle>
+          <ion-item button (click)="featureCurrentlyUnavailable()">
+            <ion-icon name="information-circle" slot="start"></ion-icon>
+            <ion-label>Graduates</ion-label>
+          </ion-item>
+        </ion-menu-toggle> -->
+
+        <!-- Header::Learn More -->
+        <!-- <ion-list-header>
+          <ion-label>Learn More</ion-label>
+        </ion-list-header> -->
+        <!-- Learners -->
+        <!-- <ion-menu-toggle>
+          <ion-item button (click)="featureCurrentlyUnavailable()">
+            <ion-icon name="accessibility" slot="start"></ion-icon>
+            <ion-label>Learners</ion-label>
+          </ion-item>
+        </ion-menu-toggle> -->
+        <!-- Parents -->
+        <!-- <ion-menu-toggle>
+          <ion-item button (click)="featureCurrentlyUnavailable()">
+            <ion-icon name="woman" slot="start"></ion-icon>
+            <ion-label>Parents</ion-label>
+          </ion-item>
+        </ion-menu-toggle> -->
+        <!-- Adults -->
+        <!-- <ion-menu-toggle>
+          <ion-item button (click)="featureCurrentlyUnavailable()">
+            <ion-icon name="swap-horizontal" slot="start"></ion-icon>
+            <ion-label>Young Adults</ion-label>
+          </ion-item>
+        </ion-menu-toggle> -->
+        <!-- Questionnaires -->
+        <!-- <ion-menu-toggle>
+          <ion-item routerLink="/dashboard/tabs/questionniare">
+            <ion-icon name="reader" slot="start"></ion-icon>
+            <ion-label>Questionnaires</ion-label>
+          </ion-item>
+        </ion-menu-toggle> -->
+        <!-- Schools -->
+        <!-- <ion-menu-toggle>
+          <ion-item routerLink="/dashboard/tabs/interview">
+            <ion-icon name="newspaper" slot="start"></ion-icon>
+            <ion-label>Interviews</ion-label>
+          </ion-item>
+        </ion-menu-toggle> -->
+        <!-- Fundamentals -->
+        <!-- <ion-menu-toggle>
+          <ion-item routerLink="/dashboard/tabs/products">
+            <ion-icon name="easel" slot="start"></ion-icon>
+            <ion-label>Fundamentals</ion-label>
+          </ion-item>
+        </ion-menu-toggle> -->
+        <!-- Pychometric -->
+        <!-- <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/dashboard/tabs/products">
+            <ion-icon name="glasses" slot="start"></ion-icon>
+            <ion-label>Pychometrics</ion-label>
+          </ion-item>
+        </ion-menu-toggle> -->
+        <!-- MUT -->
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/dashboard/tabs/mut">
+            <ion-icon name="business" slot="start"></ion-icon>
+            <ion-label>MUT</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <hr>
+        <!-- Help -->
+        <ion-menu-toggle>
+          <ion-item button (click)="presentAlert('help')" detail="false">
+            <ion-icon name="help" slot="start"></ion-icon>
+            <ion-label>Help</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <!-- About -->
+        <ion-menu-toggle>
+          <ion-item button (click)="presentAlert('about')" detail="false">
+            <ion-icon name="information" slot="start"></ion-icon>
+            <ion-label>About</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <!-- Logout -->
+        <ion-menu-toggle>
+          <ion-item button detail="false" (click)="logOff()">
+            <ion-icon name="log-out" slot="start"></ion-icon>
+            <ion-label>Logout</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <!-- Application Starts Here -->
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

@@ -1,0 +1,411 @@
+<ion-header>
+  <ion-toolbar color="dark" class="p-3">
+    <ion-buttons slot="start">
+      <ion-button (click)="openMenu()">
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <h1 class="nav navbar-brand">Questionnaires</h1>
+    <!-- <ion-title>Questionniare</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <!-- Banner image -->
+    <ion-img src="https://images.unsplash.com/photo-1606326608690-4e0281b1e588?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cXVpenxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1296&q=60"></ion-img>
+    <!-- Main Section -->
+    <ion-list>
+      <ion-item-divider class="ion-padding" color="dark">
+        <ion-label>Free Test</ion-label>
+      </ion-item-divider>
+
+      <!-- Question 1 -->
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>Question 1 | Please select 1 option</ion-card-subtitle>
+          <ion-card-title class="ion-text-center ion-padding-top">How creative are you?</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <hr>
+          <ion-img src="https://images.unsplash.com/photo-1560421683-6856ea585c78?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y3JlYXRpdml0eXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1296&q=60"></ion-img>
+          <hr>
+          <ion-list>
+            <ion-radio-group [(ngModel)]="q1" >
+              <ion-item>
+                <ion-label>Not at all really </ion-label>
+                <ion-radio slot="start" value="1"></ion-radio>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>I like to express myself</ion-label>
+                <ion-radio slot="start" value="2"></ion-radio>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>I'm fairly creative</ion-label>
+                <ion-radio slot="start" value="3"></ion-radio>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>I am incredibly creative</ion-label>
+                <ion-radio slot="start" value="4"></ion-radio>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>I'm not overly creative</ion-label>
+                <ion-radio slot="start" value="5"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+
+      <!-- Question 2 -->
+      <section class="bg-dark p-3">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Question 2 | Please select 1 option</ion-card-subtitle>
+            <ion-card-title class="ion-text-center ion-padding-top">Which of these classes did you prefer in school?</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <hr>
+              <ion-img src="https://images.unsplash.com/photo-1517673132405-a56a62b18caf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3ViamVjdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=1296&q=60"></ion-img>
+            <hr>
+            <ion-list>
+              <ion-radio-group [(ngModel)]="q2" >
+                <ion-item>
+                  <ion-label>History</ion-label>
+                  <ion-radio slot="start" value="1"></ion-radio>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label>English Literature</ion-label>
+                  <ion-radio slot="start" value="2"></ion-radio>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label>Computing</ion-label>
+                  <ion-radio slot="start" value="3"></ion-radio>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label>Music</ion-label>
+                  <ion-radio slot="start" value="4"></ion-radio>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label>Biology</ion-label>
+                  <ion-radio slot="start" value="5"></ion-radio>
+                </ion-item>
+              </ion-radio-group>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </section>
+
+      <!-- Question 3 -->
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>Question 3 | Please select 1 option</ion-card-subtitle>
+          <ion-card-title class="ion-text-center ion-padding-top">Choose a word that matches your personality:</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <hr>
+            <ion-img src="https://images.unsplash.com/photo-1618590067824-5ba32ca76ce9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29uYWxpdHl8ZW58MHx8MHx8&auto=format&fit=crop&w=1296&q=60"></ion-img>
+          <hr>
+          <ion-list>
+            <ion-radio-group [(ngModel)]="q3" >
+              <ion-item>
+                <ion-label>Curious</ion-label>
+                <ion-radio slot="start" value="1"></ion-radio>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>Analytic</ion-label>
+                <ion-radio slot="start" value="2"></ion-radio>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>maticulous</ion-label>
+                <ion-radio slot="start" value="3"></ion-radio>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>Creative </ion-label>
+                <ion-radio slot="start" value="4"></ion-radio>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>Active</ion-label>
+                <ion-radio slot="start" value="5"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+
+      <!-- Question 4 -->
+      <section class="bg-dark p-3">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Question 4 | Please select 1 option</ion-card-subtitle>
+            <ion-card-title class="ion-text-center ion-padding-top">Which of these classes did you prefer in school?</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <hr>
+              <ion-img src="https://images.unsplash.com/photo-1611131922192-9e1d9f483900?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y2xhc3Nlc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1296&q=60"></ion-img>
+            <hr>
+            <ion-list>
+              <ion-radio-group [(ngModel)]="q4" >
+                <ion-item>
+                  <ion-label>Ilove watching historical documentaries</ion-label>
+                  <ion-radio slot="start" value="1"></ion-radio>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label>I love reading classic books </ion-label>
+                  <ion-radio slot="start" value="2"></ion-radio>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label>I love Computers </ion-label>
+                  <ion-radio slot="start" value="3"></ion-radio>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label>I love playing musical instrument</ion-label>
+                  <ion-radio slot="start" value="4"></ion-radio>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label>I love playing and watching sports</ion-label>
+                  <ion-radio slot="start" value="5"></ion-radio>
+                </ion-item>
+              </ion-radio-group>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </section>
+
+      <!-- Question 5 -->
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>Question 5 | Please select 1 option</ion-card-subtitle>
+          <ion-card-title class="ion-text-center ion-padding-top">How many hours of lectures are you willing to go to per week?</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <hr>
+            <ion-img src="https://media.istockphoto.com/photos/african-americans-college-students-eleaning-with-their-teacher-during-picture-id1334063560?b=1&k=20&m=1334063560&s=170667a&w=0&h=zvT17IEZrjB0Osm03SNUh5dbYLLat8qEW-l03BzMjGo="></ion-img>
+          <hr>
+          <ion-list>
+            <ion-radio-group [(ngModel)]="q5" >
+              <ion-item>
+                <ion-label>Under 5 hours</ion-label>
+                <ion-radio slot="start" value="1"></ion-radio>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>Under 8 hours</ion-label>
+                <ion-radio slot="start" value="2"></ion-radio>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>Over 12 hours</ion-label>
+                <ion-radio slot="start" value="3"></ion-radio>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>Under 10 hours</ion-label>
+                <ion-radio slot="start" value="4"></ion-radio>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>10-12 hours</ion-label>
+                <ion-radio slot="start" value="5"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+
+      <!-- Question 6 -->
+      <section class="bg-dark p-3">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Question 6 | Please select 1 option</ion-card-subtitle>
+            <ion-card-title class="ion-text-center ion-padding-top">Which of these is the best reflection of you?</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <hr>
+              <ion-img src="https://images.unsplash.com/photo-1509029032154-54ba8b3216d4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cmVmbGVjdGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1296&q=60"></ion-img>
+            <hr>
+            <ion-list>
+              <ion-radio-group [(ngModel)]="q6" >
+
+                <ion-item>
+                  <ion-label>I'm not the best at problem solving </ion-label>
+                  <ion-radio slot="start" value="1"></ion-radio>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label>I hate logistical thinking </ion-label>
+                  <ion-radio slot="start" value="2"></ion-radio>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label>I absolutely love finding solutions to problems and puzzles </ion-label>
+                  <ion-radio slot="start" value="3"></ion-radio>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label>I'm fairly good at problem solving </ion-label>
+                  <ion-radio slot="start" value="4"></ion-radio>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label>I can crack the occasional difficult puzzle or two </ion-label>
+                  <ion-radio slot="start" value="5"></ion-radio>
+                </ion-item>
+              </ion-radio-group>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </section>
+
+      <!-- Question 7 -->
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>Question 7 | Please select 1 option</ion-card-subtitle>
+          <ion-card-title class="ion-text-center ion-padding-top">How many hours of extra work in your own free time are you willing to study?</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <hr>
+            <ion-img src="https://media.istockphoto.com/photos/relax-refresh-and-recharge-in-office-picture-id509997150?k=20&m=509997150&s=612x612&w=0&h=qVSfCf5DYvrlft9JyfguPICRin0PJG7tofv4yg7K9Yg="></ion-img>
+          <hr>
+          <ion-list>
+            <ion-radio-group [(ngModel)]="q7" >
+
+              <ion-item>
+                <ion-label>Not much at all, really </ion-label>
+                <ion-radio slot="start" value="1"></ion-radio>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>A couple of hours here and there </ion-label>
+                <ion-radio slot="start" value="2"></ion-radio>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>A good few hours a weak </ion-label>
+                <ion-radio slot="start" value="3"></ion-radio>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>At least an hour a day </ion-label>
+                <ion-radio slot="start" value="4"></ion-radio>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>I don't mind doing a few extra hours a week </ion-label>
+                <ion-radio slot="start" value="5"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+
+      <section class="bg-dark p-3">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Question 8 | Please select 1 option</ion-card-subtitle>
+            <ion-card-title class="ion-text-center ion-padding-top">How good are you at remembering facts and figures?</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <hr>
+              <ion-img src="https://images.unsplash.com/photo-1528569937393-ee892b976859?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bWVtb3J5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1296&q=60"></ion-img>
+            <hr>
+            <ion-list>
+              <ion-radio-group [(ngModel)]="q8" >
+
+                <ion-item>
+                  <ion-label>Absolutely brilliant </ion-label>
+                  <ion-radio slot="start" value="1"></ion-radio>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label>Fairly decent </ion-label>
+                  <ion-radio slot="start" value="2"></ion-radio>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label>Not the best </ion-label>
+                  <ion-radio slot="start" value="3"></ion-radio>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label>not bad, not great </ion-label>
+                  <ion-radio slot="start" value="4"></ion-radio>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label>I'm pretty good at remembering facts </ion-label>
+                  <ion-radio slot="start" value="5"></ion-radio>
+                </ion-item>
+              </ion-radio-group>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </section>
+
+      <!-- Sumbmit button -->
+      <section class="p-3">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Calculate your score</ion-card-subtitle>
+            <ion-card-title class="ion-text-center">Submit Your Test!</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="2"></ion-col>
+                <ion-col size="8">
+                  <ion-button color="secondary" expand="block" (click)="calculatescore()">Submit Test</ion-button>
+                </ion-col>
+                <ion-col size="2"></ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </section>
+      </ion-list>
+
+      <!-- Image -->
+      <ion-img src="https://media.istockphoto.com/photos/subscribe-text-on-speech-bubble-with-envelopes-picture-id1346029753?k=20&m=1346029753&s=612x612&w=0&h=zN9UOYIpshb6dYSMoB_okNkRzAQJqWYoZHUfz-HL7Tc="></ion-img>
+
+      <ion-list>
+        <!-- Subscription  -->
+        <ion-item-divider class="ion-padding" color="dark">
+          <ion-label>Tailored Tests</ion-label>
+        </ion-item-divider>
+
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Tailored Assessments</ion-card-subtitle>
+            <ion-card-title class="ion-text-center">Coming Soon!</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Tailored user assessments will be available for subscriped users. Once these assessmets
+            are available, all our registered users will be sent notifications via email!
+          </ion-card-content>
+        </ion-card>
+        <br><br><br><br>
+      </ion-list>
+</ion-content>

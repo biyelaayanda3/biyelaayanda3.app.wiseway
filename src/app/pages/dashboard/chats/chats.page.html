@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="dark" class="p-3">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/dashboard/tabs/home">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <h1 class="nav navbar-brand">Wiseway Chats</h1>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-tabs>
+    <ion-tab-bar slot="top"  class="pt-2 pb-2">
+
+      <ion-tab-button tab="private-chat">
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-label>Private Chats</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="group-chat">
+        <ion-icon name="people-outline"></ion-icon>
+        <ion-label>Group Chats</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>

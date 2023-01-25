@@ -1,0 +1,269 @@
+<ion-header>
+  <ion-toolbar color="dark" class="p-3">
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon size="large" name="school"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <h1 class="nav navbar-brand">Graduates</h1>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onCancel()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Swiper: carousel Slider -->
+  <swiper #swiper [config]="config">
+    <ng-template swiperSlide>
+      <img class="img-fluid w-100" src="../../../../../assets/slides/graduates/1.jpg">
+    </ng-template>
+    <ng-template swiperSlide>
+      <img class="img-fluid w-100" src="../../../../../assets/slides/graduates/2.jpg">
+    </ng-template>
+    <ng-template swiperSlide>
+      <img class="img-fluid w-100" src="../../../../../assets/slides/graduates/3.jpg">
+    </ng-template>
+  </swiper>
+
+  <ion-list>
+    <ion-item-divider class="ion-padding" color="dark">
+      <ion-label>New Graduates</ion-label>
+      <ion-icon slot="end" size="large" [name]="!isNewGraduates ? 'chevron-down' : 'chevron-up'" (click)="toggleNewGraduates()"></ion-icon>
+    </ion-item-divider>
+    <!--  -->
+    <div class="container" *ngIf="isNewGraduates">
+      <!-- Spinner -->
+      <ion-spinner class="center p-3" color="secondary" *ngIf="isNewGraduates && !isNewGraduatesContent"></ion-spinner>
+      <!-- Content:: " -->
+      <ion-accordion-group *ngIf="isNewGraduates && isNewGraduatesContent">
+        <ion-accordion value="positivePersevere" class="pt-3">
+          <ion-item slot="header">
+            <ion-label>Stay Positive & Persevere</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <ion-card>
+              <ion-card-content>
+                Whilst it might feel difficult to stay optimistic, if you allow the fear of not finding a job consume you,
+                then you may well find it more difficult to get a new job.
+              </ion-card-content>
+            </ion-card>
+            <ion-card>
+              <ion-card-content>
+                Try to shift your mindset, and choose hope over fear. Thinking positively and openly will help keep you
+                focused on finding the right opportunities and channel your application energy there, rather than settling
+                or not finding anything at all. Many employers are still recruiting and you WILL find something. So, whilst
+                it might be tempting to place your job search on hold, DO keep applying, otherwise you risk those who do continue
+                their job search landing the role that was meant for you.
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </ion-accordion>
+        <ion-accordion value="developResilience">
+          <ion-item slot="header">
+            <ion-label>Develop Resilience</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <ion-card>
+              <ion-card-content>
+                Tough times can help us to develop the crucial skill of resilience that employers list as a key ‘employability skill’. Read here about developing your resilience, with some motivating links to make view challenges positively. However, if you are struggling If you are struggling to stay positive and have concerns over your mental health then these resources may help.
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </ion-accordion>
+        <ion-accordion value="updateResume">
+          <ion-item slot="header">
+            <ion-label>Update Resume</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <ion-card>
+              <ion-card-content>
+                Tailor your CV to your preferred industry and job roles (Prospects.ac.uk and Target Jobs have job profiles of graduate roles and give the key skills required as well as how to apply to them and key industry job websites).
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </ion-accordion>
+        <ion-accordion value="growNetwork">
+          <ion-item slot="header">
+            <ion-label>Grow Your Network</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <ion-card>
+              <ion-card-content>
+                With so many people stuck at home, the lockdown and working from home presents an ideal opportunity to reconnect with and continue to build your network. Reconnect with people from your personal and professional network (e.g. from work placements, part time jobs, volunteering and so on) to see how they are and let them know that you are currently looking for work. Reach out to new contacts and organisations on networking platforms – from social media to LinkedIn. This way, you’re in a good position to find out about new opportunities faster.
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </ion-accordion>
+        <ion-accordion value="timeToReflect">
+          <ion-item slot="header">
+            <ion-label>Time To Reflect</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <ion-card>
+              <ion-card-content>
+                Research and reflect on what types of roles and careers you’re interested in – if you’re unsure about your career, use tools like the Prospects Planner or jobmi to identify your skills, interests, values, then get matched to job profiles to explore online. The Ultimate Careers Guide (PDF) also has advice on self reflection and career choice.
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </ion-accordion>
+        <ion-accordion value="advanceSkillsExperience">
+          <ion-item slot="header">
+            <ion-label>Advance Skills & Experience</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <ion-card>
+              <ion-card-content>
+                Websites like Futurelearn can help you top up your skills to add to your CV from Business and Management to Health and Medicine showing employers that you have made good use of your time in lockdown. ‘How did you spend your time in the lockdown?’ could be the new popular interview question.
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </ion-accordion>
+        <ion-accordion value="jobSearch">
+          <ion-item slot="header">
+            <ion-label>Job Search</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <ion-card>
+              <ion-card-content>
+                Research roles and companies – if you know what you’re interested in, get online and start researching the employers in your industry, look at job adverts, find out tips for applying, plan to get relevant experience, and reach out online to expand your networks
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </ion-accordion>
+        <ion-accordion value="virtualWorkExperienceVolunteering">
+          <ion-item slot="header">
+            <ion-label>Virtual Work or Volunteering</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <ion-card>
+              <ion-card-content>
+                You might also consider doing a virtual work experience programme. InsideSherpa offer a range of virtual work experience from some top graduate employers, to help you develop skills, get an insight into what it’s like to work in your chosen sector, and prepare generally yourself for the world of professional work.
+                <br>
+                Volunteering gives you a chance to gain many of the same skills as through formal work experience, while also giving something back to an organisation or community that could benefit from your skills. Volunteering roles could encompass anything, from helping an organisation build their website or database, to designing promotional materials or a marketing campaign. Do-It  and websites like Idealist are good starting points
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </ion-accordion>
+        <ion-accordion value="remoteInterviewOnlineRecruitment">
+          <ion-item slot="header">
+            <ion-label>Remote Interviews & Recruitment</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <ion-card>
+              <ion-card-content>
+                Since social distancing guidelines have been announced, most employers have responded rapidly by shifting much of their recruitment and selection processes online. These include the use of video interviews, and/or remote interviews via phone or video conferencing software, such as Skype or Zoom.
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </ion-accordion>
+        <ion-accordion value="bePatient" class="pb-3">
+          <ion-item slot="header">
+            <ion-label>Be Patient</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <ion-card>
+              <ion-card-content>
+                Remember that businesses are also adjusting to the changes thrust upon us all by the Coronavirus pandemic. With employees having to rapidly adapt to new working arrangements and so much still unknown about how the situation will develop, hiring processes may take a little longer than usual (e.g. as companies navigate the best way to interview online).
+                <br>
+                Be patient and don’t panic if employers take longer than usual to respond. But also don’t be afraid to follow‐up to show you’re serious about the opportunity, but don’t chase. You can also acknowledge that you know this is a challenging time, so turnaround might take longer.
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </ion-accordion>
+      </ion-accordion-group>
+    </div>
+
+    <ion-item-divider class="ion-padding" color="dark">
+      <ion-label>Challengese Faced By Graduates</ion-label>
+      <!-- <ion-icon slot="end" size="large" [name]="!isChallenges ? 'chevron-down' : 'chevron-up'" (click)="toggleChallenges()"></ion-icon> -->
+    </ion-item-divider>
+    <div class="container">
+      <ion-card>
+        <ion-card-content>
+          However, many student affairs professionals serve and support graduate and professional students, a group with needs and concerns that differ from those of the undergraduate level.
+          <br><br>
+          Because of their unique needs, student affairs professionals who work with graduate and professional students need to be prepared to support them.
+          <br><br>
+          Here are four learning and development challenges graduate and professional students face, plus several ways for you to support them.
+        </ion-card-content>
+      </ion-card>
+
+      <ion-accordion-group>
+        <ion-accordion value="first">
+          <ion-item slot="header" color="light">
+            <ion-label>Imposter syndrome</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <ion-card>
+              <ion-card-content>
+                As students transition from the undergraduate level to the graduate and professional level, they often experience imposter syndrome.
+                <br><br>
+                Imposter syndrome affects people who struggle to accept their success. Rather than embracing their success and intellect, they believe their achievements were merely a result of luck. Additionally, they might fear being “found out” or discovered to be frauds.
+              </ion-card-content>
+            </ion-card>
+            <ion-img src="https://sapro.moderncampus.com/hs-fs/hubfs/Destiny/Imported_Blog_Media/tenor-Apr-05-2022-02-29-59-50-PM.gif?width=996&height=560&name=tenor-Apr-05-2022-02-29-59-50-PM.gif"></ion-img>
+          </div>
+        </ion-accordion>
+        <ion-accordion value="second">
+          <ion-item slot="header" color="light">
+            <ion-label>Sense of Belonging</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <ion-card>
+              <ion-card-content>
+                A sense of belonging is important to graduate students. However, how to instill this sense in them differs from undergrads, as graduate students desire different things from their education experience.
+                <br><br>
+                Some research shows that the number one factor for graduate students’ sense of belonging is professional relationships. Other factors include microaggressions (which hurts students’ senses of belonging), and micro-affirmations (which help it).
+                <br><br>
+                Women and students with underrepresented racial and ethnic identities are more likely to have their sense of belonging negatively impacted by microaggressions than white men are. Women are also more likely to be positively impacted by micro-affirmations than men.
+                <br><br>
+                MIT professor Mary Rowe defines micro-affirmations as “tiny acts of opening doors to opportunity, gestures of inclusion and caring, and graceful acts of listening.” Rowe contends that micro-affirmations include “fair, specific, timely, consistent and clear feedback that helps a person build on strength and correct weakness.”
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </ion-accordion>
+        <ion-accordion value="third">
+          <ion-item slot="header" color="light">
+            <ion-label>Isolation</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <ion-card>
+              <ion-card-content>
+                Graduate and professional schools can be very isolating because much of the work is being done independently. Students tend to have increased class, work, and study obligations, and as a result, they may become less engaged with others.
+                <br><br>
+                Social events on campuses also tend to be centered on undergraduate students, so many graduate and professional students may not feel connected to their institutions either.
+                <br><br>
+                You can help combat isolation by creating or working with graduate and professional student groups on campus. You can create networking and social events for them. Because students may have families and/or significant others, many events should be open to partners and children.
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </ion-accordion>
+        <ion-accordion value="forth">
+          <ion-item slot="header" color="light">
+            <ion-label>Time Management</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <ion-card>
+              <ion-card-content>
+                Time management, work-life balance, and the accompanying stress are huge challenges for graduate and professional students. They often struggle with the perceived need to constantly be studying while maintaining a social life. Additionally, these students are expected to balance class, studying, teaching/research, professional development, and job/job-searching obligations.
+                <br><br>
+                You should be intentional about creating programming that addresses time management, work-life balance, and the stress that comes with it.
+                <br><br>
+                Time management programs can focus on the importance of sleep, exercise, and healthy eating habits, as well as developing ways to plan and scheduling tasks. With so many obligations, time during graduate and professional school is extremely limited.
+                <br><br>
+                You can also create programming for students with advice on how to talk to faculty members, advisors, and work supervisors. Students are often pulled in numerous directions, and a lot is asked of them seemingly at all times. So, it’s important to create programs that teach them to say no and decline opportunities or responsibilities, as well as how to prioritize what’s most important.
+                <br><br>
+                Our target audience for programming needs to be students; but faculty, staff, and administration are important audiences as well. We should provide resources, data, and opportunities for training about the health and well-being of students.
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </ion-accordion>
+      </ion-accordion-group>
+    </div>
+    <!-- Allow email sender -->
+  </ion-list>
+
+</ion-content>

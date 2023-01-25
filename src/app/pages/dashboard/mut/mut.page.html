@@ -1,0 +1,239 @@
+<ion-header>
+  <ion-toolbar color="dark" class="p-3">
+    <ion-buttons slot="start">
+      <ion-button (click)="openMenu()">
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <h1 class="nav navbar-brand">MUT</h1>
+    <!-- <ion-title>mut</ion-title> -->
+    <!-- <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon size="large" name="image" id="bg-warning"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon size="large" name="logo-facebook" id="bg-blue"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon size="large" name="logo-instagram" id="bg-red"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon size="large" name="logo-twitter" id="bg-secondary"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Display MUT Logo -->
+  <div *ngIf="isLoading" id="container">
+    <ion-icon size="large" name="school"></ion-icon>
+    <img class="float" src="../../../../assets/images/mut_banner.jpeg">
+    <!-- Spinner -->
+    <ion-spinner class="ion-padding" name="dots" color="primary"></ion-spinner>
+  </div>
+
+  <!-- Display MUT related content after loading -->
+  <div *ngIf="!isLoading">
+    <div>
+        <ion-list>
+          <ion-item-divider class="ion-padding" color="dark">
+            <ion-label>Conferred By The University</ion-label>
+          </ion-item-divider>
+          <ion-accordion-group class="ion-padding">
+            <ion-accordion value="conferredContent">
+              <ion-item slot="header" lines="none" button detail="false">
+                <ion-label>Degrees, Diplomas and Certificates</ion-label>
+              </ion-item>
+              <div slot="content">
+                <table class="table table-striped table-hover pt-2">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Type</th>
+                      <th scope="col">NQF</th>
+                      <th scope="col">Credits</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Doctoral Degree</td>
+                    <td>Level 10</td>
+                    <td>120</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Master's Degree</td>
+                    <td>Level 9</td>
+                    <td>120</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Post Graduate Diploma</td>
+                    <td>Level 8</td>
+                    <td>120</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>Advanced Diploma</td>
+                    <td>Level 7</td>
+                    <td>120</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>Diploma</td>
+                    <td>Level 6</td>
+                    <td>360</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </ion-accordion>
+          </ion-accordion-group>
+
+          <ion-item-divider class="ion-padding" color="dark">
+            <ion-label>Application For Admissions</ion-label>
+          </ion-item-divider>
+          <ion-accordion-group class="ion-padding">
+            <ion-accordion value="applicationAdmissionsUndergraduate">
+              <ion-item slot="header">
+                <ion-label>Undergraduate Application</ion-label>
+              </ion-item>
+              <div slot="content">
+                <ion-card>
+                  <ion-card-content>
+                    All first-year applications are submitted through the Central Applications Office (CAO). This is a simplified way of applying for more than one programme, using
+                    one application form, and paying a single application fee. Use your unique CAO number as a reference when paying the application fee.
+                  </ion-card-content>
+                </ion-card>
+              </div>
+            </ion-accordion>
+            <ion-accordion value="applicationAdmissionsPostgraduate">
+              <ion-item slot="header">
+                <ion-label>Postgraduate Application</ion-label>
+              </ion-item>
+              <div slot="content">
+                ..
+              </div>
+            </ion-accordion>
+          </ion-accordion-group>
+
+          <ion-item-divider class="ion-padding" color="dark">
+            <ion-label>Admission Requirements</ion-label>
+          </ion-item-divider>
+          <ion-accordion-group class="ion-padding">
+            <ion-accordion value="admissionRequirementsGeneralRules">
+              <ion-item slot="header">
+                <ion-label>General Rules</ion-label>
+              </ion-item>
+              <div slot="content">
+                <ion-card>
+                  <ion-card-content>
+                    Each faculty stipulates admission requirements based on a points aggregate calculated from the best
+                    six subjects presented by the prospective student. Over and above the points system, some departments administer a compulsory
+                    entrance test. Not all applicants who meet the minimum requirements can be accepted due to limited space.
+                    The selection process prioritises the best qualified applicants and those who selected MUT as their first or second choice.
+                  </ion-card-content>
+                </ion-card>
+              </div>
+            </ion-accordion>
+            <ion-accordion value="admissionRequirements">
+              <ion-item slot="header">
+                <ion-label>Requirements</ion-label>
+              </ion-item>
+              <div slot="content">
+                <strong>Minimum Entrance Requirements</strong>
+                <ul>
+                  <li>National Senior Certificate with a diploma pass or N3 with 50% pass in Mathematics and English;</li>
+                  <li>A minimum of six subjects with level
+                    4 pass for Diploma study and level 3 for Access Courses</li>
+                  <li>English Home Language or First Additional language, level 4 pass;</li>
+                  <li>Specific subject combination and pass level relevant to the qualification; and</li>
+                  <li>Minimum points as per faculty requirement and as listed in the CAO handbook</li>
+                </ul>
+
+                <ion-text color="danger">
+                  <h3>NB: The selection process prioritises the best qualified applicants and those who selected MUT as their first or second choice.</h3>
+                </ion-text>
+              </div>
+            </ion-accordion>
+          </ion-accordion-group>
+
+          <ion-item-divider class="ion-padding" color="dark">
+            <ion-label>Registration Information</ion-label>
+          </ion-item-divider>
+          <ion-accordion-group class="ion-padding">
+            <ion-accordion value="generalRegulations">
+              <ion-item slot="header">
+                <ion-label>General Regulations</ion-label>
+              </ion-item>
+              <div slot="content">
+                ..
+              </div>
+            </ion-accordion>
+            <ion-accordion value="nonDiplomaPurposes">
+              <ion-item slot="header">
+                <ion-label>Non-Diploma Purposes</ion-label>
+              </ion-item>
+              <div slot="content">
+                ..
+              </div>
+            </ion-accordion>
+            <ion-accordion value="registrationDates">
+              <ion-item slot="header">
+                <ion-label>Registration Dates</ion-label>
+              </ion-item>
+              <div slot="content">
+                <ion-card>
+                  <ion-card-content>
+                    <strong>Important Closing Dates:</strong>
+                    <ul>
+                      <li>Faculty of Engineering – first semester applications: 30 September</li>
+                      <li>Faculty of Engineering – second semester applications: 31 May</li>
+                      <li>Faculty of Natural Sciences: 30 September</li>
+                      <li>Analytical Chemistry – second semester applications: 31 May</li>
+                      <li>Faculty of Management Sciences: 30 September</li>
+                    </ul>
+                    <ion-text color="danger">
+                      <p>NB: Applications submitted after 30 September accumulate a late application fee, determined by the CAO.</p>
+                    </ion-text>
+
+                    <strong>Important Application Documents (for South African Applicants)</strong>
+                    <ul>
+                      <li>National Senior Certificate or Statement of Results;</li>
+                      <li>Senior Certificate;</li>
+                      <li>Identity Document; and</li>
+                      <li>Students transferring from other universities should submit an original academic
+                        record and a certificate of good conduct.</li>
+                    </ul>
+
+                    <strong>Non-South African Applicants</strong>
+                    <ul>
+                      <li>A valid passport and study permit;</li>
+                      <li>A valid medical aid/health insurance cover;</li>
+                      <li>Police clearance certificate – part of the requirements as from January 2015;</li>
+                      <li>SGCE, GCE, GCSE, IGCSE or Cambridge School Certificate;</li>
+                      <li>Five subjects at O Levels including Maths A/B/C, Physical Science A/B/C,
+                        English A/B/C, and Technical Drawing A/B/C; and</li>
+                      <li>Three of the five subjects must have been passed in the
+                        same exam sitting.</li>
+                    </ul>
+                  </ion-card-content>
+                </ion-card>
+              </div>
+            </ion-accordion>
+            <ion-accordion value="lateRegistration">
+              <ion-item slot="header">
+                <ion-label>Late Registration</ion-label>
+              </ion-item>
+              <div slot="content">
+                ..
+              </div>
+            </ion-accordion>
+          </ion-accordion-group>
+      </ion-list>
+    </div>
+  </div>
+
+</ion-content>

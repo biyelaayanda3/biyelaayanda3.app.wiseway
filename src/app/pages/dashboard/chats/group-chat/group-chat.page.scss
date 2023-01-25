@@ -1,0 +1,36 @@
+.chatClass{
+  display: flex;
+  flex-direction: column;
+
+   .myChat{
+      position: relative;
+      margin: 25px 5px 0px;
+      max-width: 80%;
+      align-self: flex-end;
+      padding: 6px 10px 7px;
+      border-radius: 15px 15px 0;
+      background-color: darkcyan;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+   }
+   .otherChat{
+     position: relative;
+     margin: 15px;
+      max-width: 80%;
+      padding: 6px 10px 7px;
+      align-self: flex-start;
+      border-radius: 15px 15px 15px 0;
+      background-color: rgb(11, 199, 199);
+      font-weight: 700;
+      color: rgb(68, 75, 82);
+      line-height: 1.2;
+      font-style: normal;
+
+   }
+    .names{
+      font-weight: bold;
+      color: rgba(40, 68, 75, 0.877);
+      font-style: italic;
+    }
+  }

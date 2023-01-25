@@ -1,0 +1,40 @@
+#container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+ion-thumbnail {
+  width: 50%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ion-icon {
+  cursor: pointer;
+}
+
+#bg-warning {
+  color: var(--ion-color-warning);
+}
+
+#bg-blue {
+  color: var(--ion-color-primary);
+}
+
+#bg-red {
+  color: var(--ion-color-danger);
+}
+#bg-secondary {
+  color: var(--ion-color-secondary);
+}
+
+.my-custom-class {
+  width: 100%;
+  --background: #808080;
+}

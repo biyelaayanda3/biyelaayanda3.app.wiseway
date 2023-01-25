@@ -1,0 +1,118 @@
+<ion-header>
+  <ion-toolbar color="dark" class="p-3">
+    <!-- <ion-buttons slot="start">
+      <ion-back-button defaultHref="/landing"></ion-back-button>
+    </ion-buttons> -->
+    <h1 class="nav navbar-brand">Login</h1>
+    <!-- <ion-title class="nav navbar-brand">Login</ion-title> -->
+    <ion-buttons slot="end">
+      <ion-button id="popoverTrigger">
+        <ion-icon slot="icon-only" name="chevron-down"></ion-icon>
+        <ion-popover trigger="popoverTrigger" [dismissOnSelect]="true">
+          <ng-template>
+            <ion-content>
+              <ion-list class="ion-no-padding">
+                <ion-item detail="false" button>
+                  <!-- <ion-icon slot="start" name="caret-down-circle"></ion-icon> -->
+                  <ion-label>Forgot Password</ion-label>
+                </ion-item>
+                <ion-item detail="false" button>
+                  <!-- <ion-icon slot="end" name="caret-down-circle"></ion-icon> -->
+                  <ion-label>Create Account</ion-label>
+                </ion-item>
+                <ion-item detail="false" button>
+                  <!-- <ion-icon slot="end" name="caret-down-circle"></ion-icon> -->
+                  <ion-label>Help</ion-label>
+                </ion-item>
+                <ion-item detail="false" button>
+                  <!-- <ion-icon slot="end" name="caret-down-circle"></ion-icon> -->
+                  <ion-label>About</ion-label>
+                </ion-item>
+              </ion-list>
+            </ion-content>
+          </ng-template>
+        </ion-popover>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Login Form -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Log into your account</ion-card-subtitle>
+      <ion-card-title class="ion-text-center pt-3">Login</ion-card-title>
+      <ion-thumbnail>
+        <ion-img class="float" src="../../../assets/icon/login.png"></ion-img>
+      </ion-thumbnail>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form (ngSubmit)="onSubmit()" [formGroup]="credentials" class="ion-margin-top">
+        <ion-list>
+          <ion-item class="ion-margin-bottom">
+            <ion-icon slot="start" name="mail"></ion-icon>
+            <ion-input type="email" placeholder="Email Address" formControlName="email"></ion-input>
+            <ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors">Please enter a valid email address</ion-note>
+          </ion-item>
+          <ion-item class="ion-margin-bottom">
+            <ion-icon slot="start" [name]="isPasswordHidden ? 'eye' : 'eye-off'" (click)="togglePassword()"></ion-icon>
+            <ion-input [type]="isPasswordHidden ? 'password' : 'text'" placeholder="Password" formControlName="password"></ion-input>
+            <ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors">Password must be 6 characters or more</ion-note>
+          </ion-item>
+        </ion-list>
+
+        <ion-grid class="ion-no-margin-bottom ion-no-padding-bottom">
+          <ion-row>
+            <ion-col>
+              <ion-text class="ion-text-end">
+                <!--  (click)="presentModalForgotPassword()" -->
+                <h6><span (click)="presentModalForgotPassword()">Forgot password</span></h6>
+              </ion-text>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="12">
+              <ion-button type="submit" color="secondary" expand="block" [disabled]="!credentials.valid"> <!-- (click)="changeForm()" -->
+                <ion-icon name="log-in-outline" slot="start"></ion-icon>
+                Log In
+              </ion-button>
+                <ion-text class="ion-text-center ion-padding">
+                  <!--  (click)="presentModalSignUp()" -->
+                  <h6>Don't have an account? <span (click)="onDisplaySignUp()">Sign Up</span></h6>
+                </ion-text>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="dark">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="1"></ion-col>
+        <ion-col size="2">
+          <ion-icon size="large" name="arrow-back" routerLink="/landing"></ion-icon>
+        </ion-col>
+        <ion-col size="2">
+          <!-- <ion-icon color="warning" size="large" name="logo-google"></ion-icon> -->
+        </ion-col>
+        <ion-col size="2">
+          <!-- <ion-icon color="primary" size="large" name="logo-facebook"></ion-icon> -->
+        </ion-col>
+        <ion-col size="2">
+          <!-- <ion-icon color="secondary" size="large" name="logo-twitter"></ion-icon> -->
+        </ion-col>
+        <ion-col size="2">
+          <ion-icon size="large" name="arrow-forward" routerLink="/auth/signup"></ion-icon>
+        </ion-col>
+        <ion-col size="1"></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,129 @@
+<ion-header>
+  <ion-toolbar color="dark" class="p-3">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/dashboard/tabs/home">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <h1 class="nav navbar-brand">Career Transition</h1>
+    <!-- <ion-title>career-transition</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Swiper: carousel Slider -->
+  <swiper #swiper [config]="config">
+    <ng-template swiperSlide>
+      <ion-img src="../../../../assets/images/careerTransition/1.jpg"></ion-img>
+    </ng-template>
+    <ng-template swiperSlide>
+      <ion-img src="../../../../assets/images/careerTransition/2.jpg"></ion-img>
+    </ng-template>
+    <ng-template swiperSlide>
+      <ion-img src="../../../../assets/images/careerTransition/3.jpg"></ion-img>
+    </ng-template>
+    <ng-template swiperSlide>
+      <ion-img src="../../../../assets/images/careerTransition/4.jpg"></ion-img>
+    </ng-template>
+    <ng-template swiperSlide>
+      <ion-img src="../../../../assets/images/careerTransition/5.jpg"></ion-img>
+    </ng-template>
+  </swiper>
+  <!-- Famous Career Changes -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Famous Career Changes</ion-card-subtitle>
+      <ion-card-title class="ion-text-center p-1">It's Never Too Late!</ion-card-title>
+      <div class="ion-text-center p-2">
+        <ion-icon size="large" name="alarm" id="bg-red"></ion-icon>
+      </div>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-text class="ion-text-center">
+        <h4>Successful people never settled for less. So instead of feeling stuck
+          at your desk with your 9-5 job, you should finally put a foot forward and work towards your dreams!</h4>
+      </ion-text>
+      <hr>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="4" *ngFor="let image of famousPeople, index as i">
+            <ion-img [src]="image" (click)="showSummary(famousPeopleNames[i])"></ion-img>
+            <h5 class="ion-text-center">{{ famousPeopleNames[i] }}</h5>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <hr>
+      <ion-text class="ion-text-center">
+        <h4>Courage, passion, and strategy. Sometimes, a little push in the right direction can make a huge difference in a person’s life.</h4>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+  <!-- Summary -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Quick Summary</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-text class="ion-text-center">
+        <h6>
+          Career transitions are like onions. They’re complex and there is usually a
+          lot more to them than we see on the surface. Whether you are pursuing a
+          passion or side hustle, confused about quitting your job for a new one,
+          or just looking for a change, know that it’s not a straightforward decision.
+          It requires careful planning and thinking through the why, the what, and the when.
+        </h6>
+      </ion-text>
+      <ion-accordion-group>
+        <ion-list-header>
+          <ion-label>Learn More</ion-label>
+        </ion-list-header>
+        <!-- Learn More -->
+        <ion-accordion value="first">
+          <ion-item slot="header">
+            <ion-label>Why do you want to change?</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            Is it the culture of the organization, the people you work with, or is something else
+            bogging you down? It is critical to be radically honest with yourself and think things through.
+          </div>
+        </ion-accordion>
+        <ion-accordion value="second">
+          <ion-item slot="header">
+            <ion-label>What do you want to do?</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            Conduct a self-assessment. It is impossible to know where you are going if you don’t know where
+            you are. Then write down the steps you will need to take that will get you closer to your goals
+            and the problems that you might encounter in doing that.
+          </div>
+        </ion-accordion>
+        <ion-accordion value="third">
+          <ion-item slot="header">
+            <ion-label>When will the change happen?</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            Be realistic about the time it can take. Some transitions are unlikely in the short-term. Don’t
+            set yourself up for failure by setting unrealistic goals in unrealistic timeframes.
+          </div>
+        </ion-accordion>
+      </ion-accordion-group>
+    </ion-card-content>
+  </ion-card>
+  <!-- Content -->
+  <ion-list>
+    <ion-item
+      button
+      *ngFor="let careerTransition of loadedCareerTransition"
+      (click)="displayCareerTransitionItem(careerTransition.id)">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="careerTransition.image"></ion-img>
+      </ion-thumbnail>
+      <ion-text>
+        <ion-label>{{careerTransition.title}}</ion-label>
+        <ion-note>{{careerTransition.subTitle}}</ion-note>
+      </ion-text>
+    </ion-item>
+  </ion-list>
+</ion-content>

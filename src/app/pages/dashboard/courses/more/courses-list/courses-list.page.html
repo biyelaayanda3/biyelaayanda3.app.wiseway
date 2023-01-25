@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="dark" class="p-3">
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon size="large" name="school"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <h1 class="nav navbar-brand">Course Detail</h1>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onCancel()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-img src="https://media.istockphoto.com/photos/multiethnic-group-of-latin-american-college-students-smiling-picture-id1349297974?k=20&m=1349297974&s=612x612&w=0&h=Xe-ojlzQgqHf8tr3SxK2n8Q9Csb3NMjXmGj_pSfDqG4="></ion-img>
+
+  <ion-list>
+    <ion-item-divider class="ion-padding" color="dark">
+      <ion-label>{{ selectedDegree.duration }} | {{ selectedDegree.saqa }} | {{ selectedDegree.nqf }}</ion-label>
+    </ion-item-divider>
+  </ion-list>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>{{ selectedDegree.category }} | {{ selectedDegree.credits }} </ion-card-subtitle>
+      <ion-card-title class="ion-text-center">{{ selectedDegree.title }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      {{ selectedDegree.about }}
+      <br>
+      <h2 class="ion-padding ion-text-center">Admission Requirements</h2>
+      <br>
+      <ul *ngFor="let item of selectedDegree.admissionRequirements">
+        <li>{{ item }}</li>
+      </ul>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-img [src]="selectedDegree?.image"></ion-img>
+</ion-content>

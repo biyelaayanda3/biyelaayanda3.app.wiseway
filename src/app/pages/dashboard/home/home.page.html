@@ -1,0 +1,265 @@
+<ion-header>
+  <ion-toolbar color="dark" class="p-3">
+    <ion-buttons slot="start">
+      <ion-button (click)="openMenu()">
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <h1 class="nav navbar-brand">Home</h1>
+    <!-- <ion-title class="nav navbar-brand">Home</ion-title> -->
+    <ion-buttons slot="end">
+      <ion-button id="chats" (click)="displayLoader('/dashboard/tabs/chats')">
+        <ion-icon slot="icon-only" name="chatbubbles"></ion-icon>
+      </ion-button>
+      <ion-button id="calculator" (click)="displayLoader('calculator')">
+        <ion-icon slot="icon-only" name="calculator"></ion-icon>
+      </ion-button>
+      <ion-button id="profile" (click)="displayLoader('/dashboard/tabs/more/tabs/team')">
+        <ion-icon slot="icon-only" name="person"></ion-icon>
+      </ion-button>
+      <!-- <ion-button id="popoverTrigger">
+        <ion-icon slot="icon-only" name="chevron-down"></ion-icon>
+        <ion-popover trigger="popoverTrigger" [dismissOnSelect]="true">
+          <ng-template>
+            <ion-content>
+              <ion-list>
+                <ion-list-header>
+                  <ion-label>Quick Access</ion-label>
+                </ion-list-header>
+                <ion-item detail="false" button>
+                  <ion-icon slot="end" name="caret-down-circle"></ion-icon>
+                  <ion-label>Learners</ion-label>
+                </ion-item>
+                <ion-item detail="false" button>
+                  <ion-icon slot="end" name="caret-down-circle"></ion-icon>
+                  <ion-label>Parents</ion-label>
+                </ion-item>
+                <ion-item detail="false" button>
+                  <ion-icon slot="end" name="caret-down-circle" (click)="displayLoader('/dashboard/tabs/career-transition')"></ion-icon>
+                  <ion-label>Transition</ion-label>
+                </ion-item>
+                <ion-item detail="false" button>
+                  <ion-icon slot="end" name="caret-down-circle"></ion-icon>
+                  <ion-label>Quesionnaires</ion-label>
+                </ion-item>
+                <ion-item detail="false" button>
+                  <ion-icon slot="end" name="caret-down-circle"></ion-icon>
+                  <ion-label>Interviews</ion-label>
+                </ion-item>
+                <ion-item detail="false" button>
+                  <ion-icon slot="end" name="caret-down-circle"></ion-icon>
+                  <ion-label>Applications</ion-label>
+                </ion-item>
+                <ion-item detail="false" button>
+                  <ion-icon slot="end" name="caret-down-circle"></ion-icon>
+                  <ion-label>Bursaries</ion-label>
+                </ion-item>
+              </ion-list>
+            </ion-content>
+          </ng-template>
+        </ion-popover>
+      </ion-button> -->
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Swiper: carousel Slider -->
+  <swiper #swiper [config]="config">
+    <ng-template swiperSlide *ngFor="let img of sliderImages">
+      <img [src]="img">
+    </ng-template>
+  </swiper>
+<!-- Grid options:: Quick Links -->
+<ion-list>
+  <!-- Quick Navigation Links -->
+  <ion-item-divider class="ion-padding" color="dark">
+    <ion-label>Quick Links</ion-label>
+    <ion-icon slot="end" size="large" name="flash-outline"></ion-icon>
+  </ion-item-divider>
+
+  <ion-item button class="pt-2" (click)="displayLoader('/dashboard/tabs/courses')">
+    <ion-icon slot="start" size="large" name="grid" class="icon-link"></ion-icon>
+    <ion-label>
+      <h2>Courses</h2>
+      <p>View courses and different degree types</p>
+    </ion-label>
+  </ion-item>
+  <ion-item button (click)="displayLoader('/dashboard/tabs/career-transition')">
+    <ion-icon slot="start" size="large" name="swap-horizontal" class="icon-link"></ion-icon>
+    <ion-label>
+      <h2>Career Change</h2>
+      <p>Factors to consider when changing careers</p>
+    </ion-label>
+  </ion-item>
+  <ion-item button (click)="displayLoader('calculator')">
+    <ion-icon slot="start" size="large" name="calculator" class="icon-link"></ion-icon>
+    <ion-label>
+      <h2>APS Calculator</h2>
+      <p>Calculate your APS score</p>
+    </ion-label>
+  </ion-item>
+  <ion-item button (click)="displayLoader('/dashboard/tabs/questionniare')">
+    <ion-icon slot="start" size="large" name="reader" class="icon-link"></ion-icon>
+    <ion-label>
+      <h2>Quizz - Tests</h2>
+      <p>Not sure what to study? We can help</p>
+    </ion-label>
+  </ion-item>
+  <ion-item lines="none" button class="pb-2" (click)="displayLoader('/dashboard/tabs/chats')">
+    <ion-icon slot="start" size="large" name="chatbubbles" class="icon-link"></ion-icon>
+    <ion-label>
+      <h2>Chats</h2>
+      <p>Reach out, communicate with other members</p>
+    </ion-label>
+  </ion-item>
+
+  <!-- Learn More -->
+  <ion-item-divider class="ion-padding" color="dark">
+    <ion-label>Learn More</ion-label>
+  </ion-item-divider>
+
+  <ion-img id="imgLearnMore" src="../../../../assets/images/learn_more.jpg"></ion-img>
+
+  <!-- Grid options:: Learn More -->
+<ion-card color="dark" id="learnMore">
+  <ion-card-header>
+    <span class="box-ribbon"></span>
+    <!-- <ion-card-subtitle>Learn More</ion-card-subtitle> -->
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4" class="ion-text-center">
+            <ion-icon size="large" name="school" (click)="displayLoader('graduates')"></ion-icon>
+            <br>
+            <ion-text class="ion-text-center">
+              <h3>Graduates</h3>
+            </ion-text>
+        </ion-col>
+        <ion-col size="4" class="ion-text-center" (click)="displayLoader('fundamentals')">
+            <ion-icon size="large" name="easel"></ion-icon>
+            <br>
+            <ion-text class="ion-text-center">
+              <h3>Fundamentals</h3>
+            </ion-text>
+        </ion-col>
+        <ion-col size="4" class="ion-text-center">
+          <ion-icon size="large" name="glasses" (click)="displayLoader('pyschometric')"></ion-icon>
+          <br>
+          <ion-text class="ion-text-center">
+            <h3>Psychometrics</h3>
+          </ion-text>
+      </ion-col>
+      </ion-row>
+      <ion-row class="pt-2">
+        <ion-col size="4" class="ion-text-center" (click)="displayLoader('/dashboard/tabs/career-tips')">
+          <ion-icon size="large" name="rocket"></ion-icon>
+          <br>
+          <ion-text class="ion-text-center">
+            <h3>Career Tips</h3>
+          </ion-text>
+        </ion-col>
+        <ion-col size="4" class="ion-text-center">
+            <ion-icon size="large" name="business" (click)="displayLoader('/dashboard/tabs/mut')"></ion-icon>
+            <br>
+            <ion-text class="ion-text-center">
+              <h3>MUT</h3>
+            </ion-text>
+        </ion-col>
+        <ion-col size="4" class="ion-text-center"  (click)="displayLoader('undergradPostgrad')">
+          <ion-icon size="large" name="grid"></ion-icon>
+          <br>
+          <ion-text class="ion-text-center">
+            <h3>Degree Types</h3>
+          </ion-text>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>
+
+  <!-- Learn More -->
+  <ion-item-divider class="ion-padding" color="dark">
+    <ion-label>Subscription Based</ion-label>
+    <ion-icon slot="end" size="large" name="wallet-outline"></ion-icon>
+  </ion-item-divider>
+
+  <!-- Grid options:: Learn More -->
+  <ion-card id="subscription">
+    <ion-card-header>
+      <span class="box-ribbon-sub"></span>
+      <!-- <ion-card-subtitle>Learn More</ion-card-subtitle> -->
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="4" class="ion-text-center">
+              <ion-icon size="large" name="accessibility" (click)="featureCurrentlyUnavailable()"></ion-icon>
+              <!-- (click)="displayLoader('learners')" -->
+              <br>
+              <ion-text class="ion-text-center">
+                <h3>Learners</h3>
+              </ion-text>
+          </ion-col>
+          <ion-col size="4" class="ion-text-center">
+              <ion-icon size="large" name="woman" (click)="featureCurrentlyUnavailable()"></ion-icon>
+              <!-- (click)="displayLoader('parents')" -->
+              <br>
+              <ion-text class="ion-text-center">
+                <h3>Parents</h3>
+              </ion-text>
+          </ion-col>
+          <ion-col size="4" class="ion-text-center">
+            <ion-icon size="large" name="reader" (click)="featureCurrentlyUnavailable()"></ion-icon>
+            <br>
+            <ion-text class="ion-text-center">
+              <h3>Questionnaires</h3>
+            </ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row class="pt-2">
+          <ion-col size="4" class="ion-text-center">
+              <ion-icon size="large" name="newspaper" (click)="featureCurrentlyUnavailable()"></ion-icon>
+              <br>
+              <ion-text class="ion-text-center">
+                <h3>Interviews</h3>
+              </ion-text>
+          </ion-col>
+          <ion-col size="4" class="ion-text-center">
+            <ion-icon size="large" name="document" (click)="featureCurrentlyUnavailable()"></ion-icon>
+            <br>
+            <ion-text class="ion-text-center">
+              <h3>Applications</h3>
+            </ion-text>
+          </ion-col>
+          <ion-col size="4" class="ion-text-center">
+            <ion-icon size="large" name="information" (click)="featureCurrentlyUnavailable()"></ion-icon>
+            <br>
+            <ion-text class="ion-text-center">
+              <h3>Bursaries</h3>
+            </ion-text>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+    <!-- Courtesy -->
+    <ion-item-divider class="ion-padding" color="dark">
+      <ion-label>Courtesy</ion-label>
+    </ion-item-divider>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="2"></ion-col>
+        <ion-col size="8">
+          <ion-img src="../../../../assets/images/wiseway.jpeg"></ion-img>
+        </ion-col>
+        <ion-col size="2"></ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-list>
+
+</ion-content>

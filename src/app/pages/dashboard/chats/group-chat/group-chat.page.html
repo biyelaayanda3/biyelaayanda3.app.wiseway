@@ -1,0 +1,23 @@
+
+<ion-content >
+  <div class="chatClass" *ngFor="let chats of chatsf |async">
+    <div class="myChat" *ngIf=" uid === chats.uID">
+      {{chats.Message}}
+    </div>
+    <div class="otherChat" *ngIf=" uid!== chats.uID">
+      <span class="names">
+         {{chats.Username}}:
+      </span>
+      <br>
+         {{chats.Message}}
+    </div>
+  </div>
+</ion-content>
+<ion-footer style="background-color: rgb(6, 92, 172);">
+  <ion-item>
+    <ion-input placeholder="Write your message here..." [(ngModel)]="textInput" (keyup.enter)="sendText()"></ion-input>
+      <ion-button (click)="sendText()" fill="clear" icon-only  slot="end">
+        <ion-icon name="send" color="secondary"></ion-icon>
+      </ion-button>
+  </ion-item>
+</ion-footer>

@@ -1,0 +1,173 @@
+<ion-header>
+  <ion-toolbar color="dark" class="p-3">
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon size="large" name="grid"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <h1 class="nav navbar-brand">Undergraduate vs Postgraduate</h1>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onCancel()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Loading Content -->
+  <div  id="container" *ngIf="isLoading">
+    <ion-thumbnail>
+      <img id="fighter" class="float" src="../../../../../assets/svgs/fighter.svg">
+    </ion-thumbnail>
+    <ion-spinner class="p-3" color="secondary"></ion-spinner>
+  </div>
+  <!-- main Content -->
+  <div *ngIf="!isLoading">
+    <!-- Banner Image -->
+    <ion-img src="../../../../assets/images/courses/undergrad_postgrad_banner.webp"></ion-img>
+    <!-- introduction -->
+    <section class="bg-dark text-light p-3 text-center">
+      <ion-text>
+        <p>
+          Speak to any seasoned student and they’ll tell you that the leap from undergraduate to postgraduate
+          studying doesn’t always have to be a huge one. Some even find the transition from one to the other
+          quite seamless and enjoyable. However, understanding either needs to start by answering two questions:
+        </p>
+      </ion-text>
+    </section>
+
+    <section class="text-light p-3 text-center">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <!-- Undergraduate Degree -->
+            <ion-card>
+              <ion-card-header>
+                <ion-card-subtitle>What is an</ion-card-subtitle>
+                <ion-card-title class="ion-text-center">Undergraduate Degree</ion-card-title>
+              </ion-card-header>
+
+              <ion-card-content>
+                An undergraduate degree is usually your first university or tertiary degree, such as an Associate or
+                Bachelor’s degree. It offers a broad overview of a particular subject. The undergraduate qualification
+                must be completed before considering any postgraduate endeavours. You cannot undertake a postgraduate
+                degree without first completing an undergraduate qualification.
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col>
+            <!-- Postgraduate Degree -->
+            <ion-card>
+              <ion-card-header>
+                <ion-card-subtitle>What is a</ion-card-subtitle>
+                <ion-card-title class="ion-text-center">Postgraduate Degree</ion-card-title>
+              </ion-card-header>
+
+              <ion-card-content>
+                A postgraduate degree or qualification is an advanced area of study in your respective field. You can
+                undertake postgraduate study after you have completed an undergraduate degree or have equivalent work
+                experience. The postgraduate degree or programme allows you to specialise or acquire a specific skill set.
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </section>
+    <section class="bg-dark text-light p-3 text-center">
+      <ion-text>
+        <h2>Main Difference Between The Studies</h2>
+      </ion-text>
+      <!-- Entry Requirements -->
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title class="ion-text-center">Entry Requirements</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          The entry requirements for an undergraduate degree will be determined by your Matric results and subjects.
+          Certain undergraduate degrees and qualifications have minimum entry requirements, like Higher Grade Maths
+          or Accounting. The entry requirements for a postgraduate degree will be dependent on your undergraduate completion.
+          It will also depend on the subject(s) in which you majored. Sometimes, a postgraduate degree will involve a selection
+          process to determine whether you’re the right fit for the programme.
+        </ion-card-content>
+      </ion-card>
+      <!-- Detail & Curriculum -->
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title class="ion-text-center">Detail & Curriculum</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          An undergraduate degree provides the student with a broad view of the subject or area of study. These are basic skills
+          that will enable you to find employment in your chosen field. A postgraduate degree, in contrast, is far more detailed
+          and will cover complex subjects. A postgraduate qualification will help become a specialist in your chosen field. There
+          is also a lot more research involved with a postgraduate degree and you will be expected to conduct research-based projects
+          and may have to produce a thesis or dissertation.
+        </ion-card-content>
+      </ion-card>
+      <!-- Class Size -->
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title class="ion-text-center">Class Size</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          Typically, the class size for an undergraduate degree is much larger than a postgraduate degree class.
+        </ion-card-content>
+      </ion-card>
+      <!-- Study Duration -->
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title class="ion-text-center">Study Duration</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          An undergraduate degree or qualification typically lasts three to four years, which will depend on the
+          type of degree you’re studying. A postgraduate programme is often completed part-time so can take longer
+          to complete than an undergraduate qualification. Most Honours and Masters Degrees can be completed in one
+          to two years, full-time. A Doctoral Degree or PhD can take five years or longer to complete.
+        </ion-card-content>
+      </ion-card>
+      <!-- Experience & Outcome -->
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title class="ion-text-center">Experience & Outcome</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          The undergraduate degree offers an overall learning experience while a postgraduate degree offers a more
+          intensive and personalised learning experience. The undergraduates usually have many subjects or modules
+          to complete while the postgraduates have less modules and lectures. Instead, postgraduate students are expected
+          to conduct research, self-learning and will have more intensive interaction with the academic faculty.
+        </ion-card-content>
+      </ion-card>
+      <!-- Academic Faculty -->
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title class="ion-text-center">Academic Faculty</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          As a postgraduate student, you can expect to work far more closely with the academic faculty than a postgraduate
+          student. In fact, you may have the opportunity to be assigned a personal mentor.
+        </ion-card-content>
+      </ion-card>
+      <!-- Assessment & Exams -->
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title class="ion-text-center">Assessment & Exams</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          A postgraduate degree is completed by meeting the requirements that include completing coursework, lecture attendance
+          and passing examinations. The postgraduate degree relies less on exams and more on the specific coursework and the
+          project or dissertation that must be presented to your academic advisor.
+        </ion-card-content>
+      </ion-card>
+    </section>
+    <!-- <section class="p-3 text-center">
+      <img class="w-50" src="../../../../../assets/svgs/fighter.svg">
+    </section> -->
+  </div>
+</ion-content>

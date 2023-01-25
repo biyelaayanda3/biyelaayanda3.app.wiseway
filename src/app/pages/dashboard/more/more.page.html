@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="dark" class="p-3">
+    <ion-buttons slot="start">
+      <ion-button (click)="openMenu()">
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <h1 class="nav navbar-brand">Information</h1>
+    <!-- <ion-title>more</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-tabs>
+    <ion-tab-bar slot="top"  class="pt-2 pb-2">
+      <ion-tab-button tab="wiseway">
+        <ion-icon name="library"></ion-icon>
+        <ion-label>Wiseway</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="team">
+        <ion-icon name="person"></ion-icon>
+        <ion-label>Profile</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="developers">
+        <ion-icon name="code"></ion-icon>
+        <ion-label>Developers</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>

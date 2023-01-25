@@ -1,0 +1,139 @@
+
+<ion-content>
+  <div id="container" class="main" *ngIf="isLoading">
+    <ion-thumbnail id="logo">
+      <img class="float" src="../../../../../assets/icon/appicon.png">
+    </ion-thumbnail>
+    <!-- Spinner -->
+    <ion-spinner name="dots" color="primary"></ion-spinner>
+  </div>
+
+  <!-- Display Chats information when loading chats -->
+  <ion-list *ngIf="!isLoading">
+    <ion-item-divider class="ion-padding" color="dark">
+      <ion-label>Chats:</ion-label>
+      <ion-icon slot="end" size="large" name="chatbubbles-outline"></ion-icon>
+    </ion-item-divider>
+
+    <div class="ion-padding-top ion-padding-bottom">
+      <!-- Sliding item with text options on both sides -->
+      <ion-item-sliding *ngFor="let item of usersPrivate | async">
+        <ion-item-options side="start">
+          <ion-item-option color="tertiary">
+            <ion-icon slot="icon-only" name="chatbubble-outline"
+              (click)="inbox(this.senderEmail,item.userID, item.Username)"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+
+        <ion-item *ngIf="this.senderEmail !== item.Email">
+          <ion-thumbnail slot="start">
+            <ion-img [src]="'../../../../../assets/icon/' + item.Gender + '.png' | lowercase "></ion-img>
+          </ion-thumbnail>
+          <ion-text class="text-dark">
+            <ion-note style="color: #000;">{{ item.Username }}</ion-note><br>
+            <ion-note [style]="item.Status === 'Active' ? 'color: #32CD32;' : 'color: #ff0000;' ">{{ item.Status }}</ion-note><br>
+            <!-- <ion-note>Quantity: {{productQuantity[i]}} item(s)</ion-note> -->
+          </ion-text>
+        </ion-item>
+      </ion-item-sliding>
+    </div>
+
+
+    <ion-item-divider class="ion-padding" color="dark">
+      <ion-label>Chat Information</ion-label>
+      <ion-icon slot="end" size="large" [name]="!isNewGraduates ? 'chevron-down' : 'chevron-up'" (click)="toggleNewGraduates()"></ion-icon>
+    </ion-item-divider>
+
+    <div class="container" *ngIf="isNewGraduates">
+      <!-- Spinner -->
+      <ion-spinner class="center p-3" color="secondary" *ngIf="isNewGraduates && !isNewGraduatesContent"></ion-spinner>
+      <!-- Content -->
+      <div *ngIf="isNewGraduates && isNewGraduatesContent">
+        <ion-item>
+          <ion-icon name="male-outline" size="large" slot="start"></ion-icon>
+          <ion-label>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="4">
+                  Males
+                </ion-col>
+                <ion-col size="6"></ion-col>
+                <ion-col size="2">
+                  {{malesCount}}
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="female-outline" size="large" slot="start"></ion-icon>
+          <ion-label>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="4">
+                  Females
+                </ion-col>
+                <ion-col size="6"></ion-col>
+                <ion-col size="2">
+                  {{femalesCount}}
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-icon name="calculator-outline" size="large" slot="start"></ion-icon>
+          <ion-label>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="4">
+                  Total
+                </ion-col>
+                <ion-col size="6"></ion-col>
+                <ion-col size="2">
+                  {{malesCount + femalesCount}}
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-label>
+        </ion-item>
+
+        <hr>
+
+        <ion-item>
+          <ion-icon name="happy-outline" size="large" slot="start"></ion-icon>
+          <ion-label>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="4">
+                  Active
+                </ion-col>
+                <ion-col size="6"></ion-col>
+                <ion-col size="2">
+                  {{activeCount}}
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="sad-outline" size="large" slot="start"></ion-icon>
+          <ion-label>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="4">
+                  Offline
+                </ion-col>
+                <ion-col size="6"></ion-col>
+                <ion-col size="2">
+                  {{offlineCount}}
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-label>
+        </ion-item>
+      </div>
+    </div>
+  </ion-list>
+
+  </ion-content>

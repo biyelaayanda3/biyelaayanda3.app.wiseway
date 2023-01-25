@@ -1,0 +1,253 @@
+<ion-header>
+  <ion-toolbar color="dark" class="p-3">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/dashboard/tabs/home">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <h1 class="nav navbar-brand">Courses</h1>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <!-- Banner Image -->
+  <ion-img src="../../../../assets/images/courses/banner.jpg"></ion-img>
+  <!-- Faculties -->
+  <ion-list>
+    <!-- Quick Navigation Links -->
+    <ion-item-divider class="ion-padding" color="dark">
+      <ion-label>MUT Faculties</ion-label>
+      <ion-icon slot="end" size="large" name="information-circle" (click)="presentAlertConfirm()"></ion-icon>
+    </ion-item-divider>
+
+    <ion-item button class="pt-3" (click)="displayLoader('rules')">
+      <ion-thumbnail slot="start">
+        <ion-img src="../../../../assets/images/courses/rules.jpg"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>University Regulations</h2>
+        <p>Registered Students | Conduct</p>
+      </ion-label>
+    </ion-item>
+    <ion-item button class="pt-3" (click)="displayLoader('/dashboard/tabs/courses/engineering')">
+      <ion-thumbnail slot="start">
+        <ion-img src="../../../../assets/images/courses/engineering.jpg"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>Engineering</h2>
+        <p>Construction Management & QS</p>
+      </ion-label>
+    </ion-item>
+    <ion-item button (click)="displayLoader('/dashboard/tabs/courses/management')">
+      <ion-thumbnail slot="start">
+        <ion-img src="../../../../assets/images/courses/management_science.jpg"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>Management Science</h2>
+        <p>5 Departments</p>
+      </ion-label>
+    </ion-item>
+    <ion-item button class="pb-3" (click)="displayLoader('/dashboard/tabs/courses/natural-science')">
+      <ion-thumbnail slot="start">
+        <ion-img src="../../../../assets/images/courses/natural_science.jpg"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>Natural Science</h2>
+        <p>7 Departments</p>
+      </ion-label>
+    </ion-item>
+    <!-- MUT Image -->
+    <ion-grid class="p-3">
+      <ion-row>
+        <ion-col size="2"></ion-col>
+        <ion-col size="8">
+          <ion-img src="../../../../assets/images/mut_banner.jpeg"></ion-img>
+        </ion-col>
+        <ion-col size="2"></ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!-- Undergraduate -->
+    <!-- Degrees -->
+    <ion-item-divider class="ion-padding" color="dark">
+      <ion-label>Degrees - Bachelor</ion-label>
+    </ion-item-divider>
+
+    <ion-item-sliding class="pt-3" *ngFor="let product of degrees" #slidingItem>
+      <!-- [routerLink]="['/', 'landing', product?.id]" -->
+      <ion-item button (click)="presentPageModalCourse(product)"
+      detail="">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="product?.image"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ product.title }}</h2>
+        <p>{{ product.duration }} | {{ product.credits }}</p>
+      </ion-label>
+    </ion-item>
+
+      <ion-item-options side="end">
+        <!-- (click)="displayProductDetails(product.id, slidingItem)" -->
+        <ion-item-option color="tertiary" >
+          <ion-icon name="eye-outline" slot="icon-only"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <!-- BCom -->
+    <ion-item-divider class="ion-padding" color="dark">
+      <ion-label>BCom</ion-label>
+    </ion-item-divider>
+
+    <ion-item-sliding class="pt-3" *ngFor="let product of bCom" #slidingItem>
+      <!-- [routerLink]="['/', 'landing', product?.id]" -->
+      <ion-item button (click)="presentPageModalCourse(product)"
+      detail="">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="product?.image"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ product.title }}</h2>
+        <p>{{ product.duration }} | {{ product.credits }}</p>
+      </ion-label>
+    </ion-item>
+
+      <ion-item-options side="end">
+        <!-- (click)="displayProductDetails(product.id, slidingItem)" -->
+        <ion-item-option color="tertiary" >
+          <ion-icon name="eye-outline" slot="icon-only"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <!-- Advanced -->
+    <ion-item-divider class="ion-padding" color="dark">
+      <ion-label>Advanced Certificate</ion-label>
+    </ion-item-divider>
+
+    <ion-item-sliding class="pt-3" *ngFor="let product of advanced" #slidingItem>
+      <!-- [routerLink]="['/', 'landing', product?.id]" -->
+      <ion-item button (click)="presentPageModalCourse(product)"
+      detail="">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="product?.image"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ product.title }}</h2>
+        <p>{{ product.duration }} | {{ product.credits }}</p>
+      </ion-label>
+    </ion-item>
+
+      <ion-item-options side="end">
+        <!-- (click)="displayProductDetails(product.id, slidingItem)" -->
+        <ion-item-option color="tertiary" >
+          <ion-icon name="eye-outline" slot="icon-only"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <!-- Higher -->
+    <ion-item-divider class="ion-padding" color="dark">
+      <ion-label>Higer Certificate</ion-label>
+    </ion-item-divider>
+
+    <ion-item-sliding class="pt-3" *ngFor="let product of higer" #slidingItem>
+      <!-- [routerLink]="['/', 'landing', product?.id]" -->
+      <ion-item button (click)="presentPageModalCourse(product)"
+      detail="">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="product?.image"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ product.title }}</h2>
+        <p>{{ product.duration }} | {{ product.credits }}</p>
+      </ion-label>
+    </ion-item>
+
+      <ion-item-options side="end">
+        <!-- (click)="displayProductDetails(product.id, slidingItem)" -->
+        <ion-item-option color="tertiary" >
+          <ion-icon name="eye-outline" slot="icon-only"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <!-- Online -->
+    <ion-item-divider class="ion-padding" color="dark">
+      <ion-label>Online Certificate</ion-label>
+    </ion-item-divider>
+
+    <ion-item-sliding class="pt-3" *ngFor="let product of online" #slidingItem>
+      <!-- [routerLink]="['/', 'landing', product?.id]" -->
+      <ion-item button (click)="presentPageModalCourse(product)"
+      detail="">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="product?.image"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ product.title }}</h2>
+        <p>{{ product.duration }} | {{ product.credits }}</p>
+      </ion-label>
+    </ion-item>
+
+      <ion-item-options side="end">
+        <!-- (click)="displayProductDetails(product.id, slidingItem)" -->
+        <ion-item-option color="tertiary" >
+          <ion-icon name="eye-outline" slot="icon-only"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+
+    <!-- Frequently Asked Questions -->
+    <ion-item-divider class="ion-padding" color="dark">
+      <ion-label>Frequently Asked Questions</ion-label>
+    </ion-item-divider>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>FAQ</ion-card-subtitle>
+        <ion-card-title class="ion-text-center">What can you do with Project Management?</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        The BCom Project Management Degree is a smart career choice. Most multinational companies
+        require the services of a qualified Project Manager to effectively manage their resources
+        on budget and within deadline. The BCom Project Management is suitable for working
+        professionals who would like to upskill or as a stand-alone qualification for those wanting
+        to specialise in this field of employment.
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="dark">
+      <ion-card-header>
+        <ion-card-subtitle>FAQ</ion-card-subtitle>
+        <ion-card-title class="ion-text-center">What does a Project Manager do?</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        Generally speaking, Project Managers are responsible for planning and executing the
+        completion of work-related tasks and projects. They need to ensure that their projects
+        are completed on time, within budget and within the agreed scope of work. Project Managers
+        often work within certain departments, like Finance, Operations, Human Resources or Marketing.
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>FAQ</ion-card-subtitle>
+        <ion-card-title class="ion-text-center">What are the five stages of Project Management?</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        A project life cycle is characterised by having five distinct stages of progression.
+        These processes include: the initiation phase, planning phase, execution phase,
+        monitoring or control phase and the closing phase.
+
+        <ion-button class="ion-margin-top" expand="block" fill="outline" color="secondary">
+          <ion-icon slot="start" name="receipt-outline"></ion-icon>
+          Stages of Progression
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>

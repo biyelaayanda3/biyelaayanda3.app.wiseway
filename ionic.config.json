@@ -1,0 +1,7 @@
+{
+  "name": "wiseway",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

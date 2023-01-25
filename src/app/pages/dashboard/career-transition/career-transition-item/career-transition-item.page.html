@@ -1,0 +1,174 @@
+<ion-header>
+  <ion-toolbar color="dark" class="p-3">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/dashboard/tabs/career-transition">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <h1 class="nav navbar-brand">Career Transition</h1>
+    <!-- <ion-title>career-transition</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-img [src]="loadedCareerTransitionItem?.image"></ion-img>
+  <!-- Heading Section -->
+  <section class="bg-dark text-light p-5 ion-text-center">
+    <div class="d-flex justify-content-around">
+      <img class="img-fluid w-25 d-none d-sm-block" src="../../../../../assets/svgs/troll.svg" alt="Fundamentals">
+      <div>
+        <ion-text>
+          <h2><ion-text color="light" class="ion-text-center">Did you know?</ion-text></h2>
+          <p>
+            <ion-text color="light">
+              Career transitions are like Shrek. They’re complex and
+              there is usually a lot more to them than we see on the
+              surface, so you’ll need to unpack the layers one at a time.
+            </ion-text>
+          </p>
+        </ion-text>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="2"></ion-col>
+            <ion-col size="8">
+              <ion-button expand="block">
+                <ion-icon slot="start" name="newspaper"></ion-icon>
+                Read More
+              </ion-button>
+            </ion-col>
+            <ion-col size="2"></ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+  </section>
+  <!-- Card::Main Section -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>{{loadedCareerTransitionItem?.subTitle}}?</ion-card-subtitle>
+      <!-- <ion-card-title class="ion-text-center">{{loadedCareerTransitionItem?.title}}</ion-card-title> -->
+      <ion-thumbnail>
+        <ion-img [src]="iconDirectory + loadedCareerTransitionItem?.title  + '.png' | lowercase"></ion-img>
+      </ion-thumbnail>
+    </ion-card-header>
+
+    <ion-card-content>
+      <hr>
+        <!-- About -->
+        <div *ngIf="loadedCareerTransitionItem?.title === 'About'">
+          <ion-text>
+            <h6 class="text-dark">Description</h6>
+            <p>{{loadedCareerTransitionItem?.description}}</p>
+          </ion-text>
+        </div>
+      <!-- Why -->
+      <div *ngIf="loadedCareerTransitionItem?.title === 'Why'">
+        <ion-text>
+          <h6 class="text-dark">Description</h6>
+          <p>{{loadedCareerTransitionItem?.description}}</p>
+        </ion-text>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="10"></ion-col>
+            <ion-col size="2">
+              <ion-icon size="large" [name]="!showWhyItem ? 'caret-down-circle' : 'caret-up-circle'" (click)="showMoreContent()"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <div *ngIf="showWhyItem">
+          <ion-text>
+            <h6 class="text-dark">Pro Tip</h6>
+            <p>{{loadedCareerTransitionItem?.proTip1}}</p>
+          </ion-text>
+          <ion-text>
+            <h6 class="text-dark">Keep In Mind</h6>
+            <p>{{loadedCareerTransitionItem?.keepMind}}</p>
+          </ion-text>
+          <ion-text>
+            <h6 class="text-dark">Pro Tip</h6>
+            <p>{{loadedCareerTransitionItem?.proTip2}}</p>
+          </ion-text>
+        </div>
+      </div>
+      <!-- What -->
+      <div *ngIf="loadedCareerTransitionItem?.title === 'What'">
+        <ion-text>
+          <h6 class="text-dark">Description</h6>
+          <p>{{loadedCareerTransitionItem?.description}}</p>
+        </ion-text>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="10"></ion-col>
+            <ion-col size="2">
+              <ion-icon size="large" [name]="!showWhatItem ? 'caret-down-circle' : 'caret-up-circle'" (click)="showMoreContent()"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <div *ngIf="showWhatItem">
+          <ion-text>
+            <ul *ngFor="let item of loadedCareerTransitionItem?.proTip1.split('-')">
+              <li>{{item}}</li>
+            </ul>
+          </ion-text>
+          <ion-text>
+            <h6 class="text-dark">Keep In Mind</h6>
+            <p>{{loadedCareerTransitionItem?.keepMind}}</p>
+          </ion-text>
+          <ion-text>
+            <h6 class="text-dark">Pro Tip</h6>
+            <p>{{loadedCareerTransitionItem?.proTip2}}</p>
+          </ion-text>
+        </div>
+      </div>
+      <!-- When 181727 == 938133056 == 863082368-->
+      <div *ngIf="loadedCareerTransitionItem?.title === 'When'">
+        <ion-text>
+          <h6 class="text-dark">Description</h6>
+          <p>{{loadedCareerTransitionItem?.description}}</p>
+        </ion-text>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="10"></ion-col>
+            <ion-col size="2">
+              <ion-icon size="large" [name]="!showWhenItem ? 'caret-down-circle' : 'caret-up-circle'" (click)="showMoreContent()"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <div *ngIf="showWhenItem">
+          <ion-text>
+            <h6 class="text-dark">Pro Tip</h6>
+            <p>{{loadedCareerTransitionItem?.proTip1}}</p>
+          </ion-text>
+          <ion-text>
+            <h6 class="text-dark">Keep In Mind</h6>
+            <p>{{loadedCareerTransitionItem?.keepMind}}</p>
+          </ion-text>
+          <ion-text>
+            <h6 class="text-dark">Pro Tip</h6>
+            <p>{{loadedCareerTransitionItem?.proTip2}}</p>
+          </ion-text>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+    <!-- Outro Section -->
+    <section class="bg-dark text-light p-5 ion-text-center">
+      <div class="d-flex justify-content-around">
+        <div>
+          <ion-text>
+            <!-- <h2><ion-text color="light" class="ion-text-center">Did you know?</ion-text></h2> -->
+            <p>
+              <ion-text color="light">
+                If you aren’t thinking about a career transition today, some day you will.
+                As and when that day comes, our hope is that you approach it with curiosity,
+                conviction, and commitment. Career transitions are messy, but they can also
+                turn out to be catalysts in shaping a future self you will be proud of. There
+                is no way of guaranteeing success, but not trying might just leave you with regrets.
+              </ion-text>
+            </p>
+          </ion-text>
+        </div>
+        <img class="img-fluid w-25 d-none d-sm-block" src="../../../../../assets/svgs/troll.svg" alt="Fundamentals">
+      </div>
+    </section>
+</ion-content>

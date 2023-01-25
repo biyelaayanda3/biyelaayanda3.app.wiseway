@@ -1,0 +1,411 @@
+<ion-header>
+  <ion-toolbar color="dark" class="p-3">
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon size="large" name="calculator"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <h1 class="nav navbar-brand">APS Calculator</h1>
+    <!-- <ion-title class="nav navbar-brand">APS Calculator</ion-title> -->
+    <ion-buttons slot="primary">
+      <ion-button (click)="onCancel()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>What can I study</ion-card-subtitle>
+      <ion-card-title class="ion-text-center">APS Calculator</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Subject Name</th>
+            <th scope="col">Subject Mark</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Home Language [(ngModel)]="this.aps.homeLanguage" -->
+          <tr>
+            <td>
+              <ion-item lines="none">
+                <ion-select [(ngModel)]="homeLanguage[0]">
+                  <ion-select-option value="homeLanguageAfrikaans">Afrikaans</ion-select-option>
+                  <ion-select-option value="homeLanguageEnglish">English</ion-select-option>
+                  <ion-select-option value="homeLanguageIsiZulu">IsiZulu</ion-select-option>
+                  <ion-select-option value="homeLanguageIsiNdebele">IsiNdebele</ion-select-option>
+                  <ion-select-option value="homeLanguageIsiXhosa">IsiXhosa</ion-select-option>
+                  <ion-select-option value="homeLanguageSesotho">Sesotho</ion-select-option>
+                  <ion-select-option value="homeLanguageSetswana">Setswana</ion-select-option>
+                  <ion-select-option value="homeLanguageSignLanguage">Sign Language</ion-select-option>
+                  <ion-select-option value="homeLanguageSiSwati">SiSwati</ion-select-option>
+                  <ion-select-option value="homeLanguageTshivenda">Tshivenda</ion-select-option>
+                  <ion-select-option value="homeLanguageXitsonga">Xitsonga</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </td>
+            <td>
+              <ion-item lines="none">
+                <ion-select [(ngModel)]="homeLanguage[1]">
+                  <ion-select-option value="homeLanguage_level8">90% - 100%</ion-select-option>
+                  <ion-select-option value="homeLanguage_level7">80% - 89%</ion-select-option>
+                  <ion-select-option value="homeLanguage_level6">70% - 79%</ion-select-option>
+                  <ion-select-option value="homeLanguage_level5">60% - 69%</ion-select-option>
+                  <ion-select-option value="homeLanguage_level4">50% - 59%</ion-select-option>
+                  <ion-select-option value="homeLanguage_level3">40% - 49%</ion-select-option>
+                  <ion-select-option value="homeLanguage_level2">30% - 39%</ion-select-option>
+                  <ion-select-option value="homeLanguage_level1">0% - 29%</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </td>
+          </tr>
+          <!-- First Additional Language -->
+          <tr>
+            <td>
+              <ion-item lines="none">
+                <ion-select [(ngModel)]="firstAdditionalLanguage[0]">
+                  <ion-select-option value="firstAdditionalLanguageAfrikaans">Afrikaans FAL</ion-select-option>
+                  <ion-select-option value="firstAdditionalLanguageEnglish">English  FAL</ion-select-option>
+                  <ion-select-option value="firstAdditionalLanguageIsiZulu">IsiZulu  FAL</ion-select-option>
+                  <ion-select-option value="firstAdditionalLanguageIsiNdebele">IsiNdebele  FAL</ion-select-option>
+                  <ion-select-option value="firstAdditionalLanguageIsiXhosa">IsiXhosa  FAL</ion-select-option>
+                  <ion-select-option value="firstAdditionalLanguageSesotho">Sesotho  FAL</ion-select-option>
+                  <ion-select-option value="firstAdditionalLanguageSetswana">Setswana  FAL</ion-select-option>
+                  <ion-select-option value="firstAdditionalLanguageSignLanguage">Sign Language  FAL</ion-select-option>
+                  <ion-select-option value="firstAdditionalLanguageSiSwati">SiSwati  FAL</ion-select-option>
+                  <ion-select-option value="firstAdditionalLanguageTshivenda">Tshivenda  FAL</ion-select-option>
+                  <ion-select-option value="firstAdditionalLanguageXitsonga">Xitsonga  FAL</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </td>
+            <td>
+              <ion-item lines="none">
+                <ion-select [(ngModel)]="firstAdditionalLanguage[1]">
+                  <ion-select-option value="firstAdditionalLanguage_level8">90% - 100%</ion-select-option>
+                  <ion-select-option value="firstAdditionalLanguage_level7">80% - 89%</ion-select-option>
+                  <ion-select-option value="firstAdditionalLanguage_level6">70% - 79%</ion-select-option>
+                  <ion-select-option value="firstAdditionalLanguage_level5">60% - 69%</ion-select-option>
+                  <ion-select-option value="firstAdditionalLanguage_level4">50% - 59%</ion-select-option>
+                  <ion-select-option value="firstAdditionalLanguage_level3">40% - 49%</ion-select-option>
+                  <ion-select-option value="firstAdditionalLanguage_level2">30% - 39%</ion-select-option>
+                  <ion-select-option value="firstAdditionalLanguage_level1">0% - 29%</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </td>
+          </tr>
+          <!-- Maths -->
+          <tr>
+            <td>
+              <ion-item lines="none">
+                <ion-select  [(ngModel)]="mathematics[0]">
+                  <ion-select-option value="mathsLit">Maths Lit</ion-select-option>
+                  <ion-select-option value="maths">Mathematics</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </td>
+            <td>
+              <ion-item lines="none">
+                <ion-select  [(ngModel)]="mathematics[1]">
+                  <ion-select-option value="maths_level8">90% - 100%</ion-select-option>
+                  <ion-select-option value="maths_level7">80% - 89%</ion-select-option>
+                  <ion-select-option value="maths_level6">70% - 79%</ion-select-option>
+                  <ion-select-option value="maths_level5">60% - 69%</ion-select-option>
+                  <ion-select-option value="maths_level4">50% - 59%</ion-select-option>
+                  <ion-select-option value="maths_level3">40% - 49%</ion-select-option>
+                  <ion-select-option value="maths_level2">30% - 39%</ion-select-option>
+                  <ion-select-option value="maths_level1">0% - 29%</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </td>
+          </tr>
+          <!-- Life Orientation -->
+          <tr>
+            <td>
+              <ion-item lines="none">
+                  <ion-label>Life Orientation</ion-label>
+              </ion-item>
+            </td>
+            <td>
+              <ion-item lines="none">
+                <ion-select [(ngModel)]="lifeOrientation[1]">
+                  <ion-select-option value="lo_level8">90% - 100%</ion-select-option>
+                  <ion-select-option value="lo_level7">80% - 89%</ion-select-option>
+                  <ion-select-option value="lo_level6">70% - 79%</ion-select-option>
+                  <ion-select-option value="lo_level5">60% - 69%</ion-select-option>
+                  <ion-select-option value="lo_level4">50% - 59%</ion-select-option>
+                  <ion-select-option value="lo_level3">40% - 49%</ion-select-option>
+                  <ion-select-option value="lo_level2">30% - 39%</ion-select-option>
+                  <ion-select-option value="lo_level1">0% - 29%</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </td>
+          </tr>
+          <!-- Subject 5 -->
+          <tr>
+            <td>
+              <ion-item lines="none">
+                <ion-select [(ngModel)]="subjectFive[0]">
+                  <ion-select-option value="subject5Accounting">Accounting</ion-select-option>
+                  <ion-select-option value="subject5Agriculture">Agriculture</ion-select-option>
+                  <ion-select-option value="subject5BusinessStudies">Business Studies</ion-select-option>
+                  <ion-select-option value="subject5CivilTech">Civil Tech</ion-select-option>
+                  <ion-select-option value="subject5CAT">CAT</ion-select-option>
+                  <ion-select-option value="subject5ConsumerStudies">Consumer Studies</ion-select-option>
+                  <ion-select-option value="subject5DanceStudies">Dance Studies</ion-select-option>
+                  <ion-select-option value="subject5Design">Design</ion-select-option>
+                  <ion-select-option value="subject5DramaticArts">Dramatic Arts</ion-select-option>
+                  <ion-select-option value="subject5Economics">Economics</ion-select-option>
+                  <ion-select-option value="subject5ElectricalTech">Electrical Tech</ion-select-option>
+                  <ion-select-option value="subject5Geography">Geography</ion-select-option>
+                  <ion-select-option value="subject5History">History</ion-select-option>
+                  <ion-select-option value="subject5Hospitality">Hospitality</ion-select-option>
+                  <ion-select-option value="subject5InformationTech">Information Tech</ion-select-option>
+                  <ion-select-option value="subject5LifeScience">Life Science</ion-select-option>
+                  <ion-select-option value="subject5MarineScience">Marine Sciences</ion-select-option>
+                  <ion-select-option value="subject5MechanicalTech">Mechanical Tech</ion-select-option>
+                  <ion-select-option value="subject5Music">Music</ion-select-option>
+                  <ion-select-option value="subject5PhysicalScience">Physical Sciences</ion-select-option>
+                  <ion-select-option value="subject5ReligionStudies">Religion Studies</ion-select-option>
+                  <ion-select-option value="subject5Tourism">Tourism</ion-select-option>
+                  <ion-select-option value="subject5VisualArts">Visual Arts</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </td>
+            <td>
+              <ion-item lines="none">
+                <ion-select [(ngModel)]="subjectFive[1]">
+                  <ion-select-option value="subject5_level8">90% - 100%</ion-select-option>
+                  <ion-select-option value="subject5_level7">80% - 89%</ion-select-option>
+                  <ion-select-option value="subject5_level6">70% - 79%</ion-select-option>
+                  <ion-select-option value="subject5_level5">60% - 69%</ion-select-option>
+                  <ion-select-option value="subject5_level4">50% - 59%</ion-select-option>
+                  <ion-select-option value="subject5_level3">40% - 49%</ion-select-option>
+                  <ion-select-option value="subject5_level2">30% - 39%</ion-select-option>
+                  <ion-select-option value="subject5_level1">0% - 29%</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </td>
+          </tr>
+          <!-- Subject 6 -->
+          <tr>
+            <td>
+              <ion-item lines="none">
+                <ion-select [(ngModel)]="subjectSix[0]">
+                  <ion-select-option value="subject6Accounting">Accounting</ion-select-option>
+                  <ion-select-option value="subject6Agriculture">Agriculture</ion-select-option>
+                  <ion-select-option value="subject6BusinessStudies">Business Studies</ion-select-option>
+                  <ion-select-option value="subject6CivilTech">Civil Tech</ion-select-option>
+                  <ion-select-option value="subject6CAT">CAT</ion-select-option>
+                  <ion-select-option value="subject6ConsumerStudies">Consumer Studies</ion-select-option>
+                  <ion-select-option value="subject6DanceStudies">Dance Studies</ion-select-option>
+                  <ion-select-option value="subject6Design">Design</ion-select-option>
+                  <ion-select-option value="subject6DramaticArts">Dramatic Arts</ion-select-option>
+                  <ion-select-option value="subject6Economics">Economics</ion-select-option>
+                  <ion-select-option value="subject6ElectricalTech">Electrical Tech</ion-select-option>
+                  <ion-select-option value="subject6Geography">Geography</ion-select-option>
+                  <ion-select-option value="subject6History">History</ion-select-option>
+                  <ion-select-option value="subject6Hospitality">Hospitality</ion-select-option>
+                  <ion-select-option value="subject6InformationTech">Information Tech</ion-select-option>
+                  <ion-select-option value="subject6LifeScience">Life Science</ion-select-option>
+                  <ion-select-option value="subject6MarineScience">Marine Sciences</ion-select-option>
+                  <ion-select-option value="subject6MechanicalTech">Mechanical Tech</ion-select-option>
+                  <ion-select-option value="subject6Music">Music</ion-select-option>
+                  <ion-select-option value="subject6PhysicalScience">Physical Sciences</ion-select-option>
+                  <ion-select-option value="subject6ReligionStudies">Religion Studies</ion-select-option>
+                  <ion-select-option value="subject6Tourism">Tourism</ion-select-option>
+                  <ion-select-option value="subject6VisualArts">Visual Arts</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </td>
+            <td>
+              <ion-item lines="none">
+                <ion-select [(ngModel)]="subjectSix[1]">
+                  <ion-select-option value="subject6_level8">90% - 100%</ion-select-option>
+                  <ion-select-option value="subject6_level7">80% - 89%</ion-select-option>
+                  <ion-select-option value="subject6_level6">70% - 79%</ion-select-option>
+                  <ion-select-option value="subject6_level5">60% - 69%</ion-select-option>
+                  <ion-select-option value="subject6_level4">50% - 59%</ion-select-option>
+                  <ion-select-option value="subject6_level3">40% - 49%</ion-select-option>
+                  <ion-select-option value="subject6_level2">30% - 39%</ion-select-option>
+                  <ion-select-option value="subject6_level1">0% - 29%</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </td>
+          </tr>
+          <!-- Subject 7 -->
+          <tr>
+            <td>
+              <ion-item lines="none">
+                <ion-select [(ngModel)]="subjectSeven[0]">
+                  <ion-select-option value="subject7Accounting">Accounting</ion-select-option>
+                  <ion-select-option value="subject7Agriculture">Agriculture</ion-select-option>
+                  <ion-select-option value="subject7BusinessStudies">Business Studies</ion-select-option>
+                  <ion-select-option value="subject7CivilTech">Civil Tech</ion-select-option>
+                  <ion-select-option value="subject7CAT">CAT</ion-select-option>
+                  <ion-select-option value="subject7ConsumerStudies">Consumer Studies</ion-select-option>
+                  <ion-select-option value="subject7DanceStudies">Dance Studies</ion-select-option>
+                  <ion-select-option value="subject7Design">Design</ion-select-option>
+                  <ion-select-option value="subject7DramaticArts">Dramatic Arts</ion-select-option>
+                  <ion-select-option value="subject7Economics">Economics</ion-select-option>
+                  <ion-select-option value="subject7ElectricalTech">Electrical Tech</ion-select-option>
+                  <ion-select-option value="subject7Geography">Geography</ion-select-option>
+                  <ion-select-option value="subject7History">History</ion-select-option>
+                  <ion-select-option value="subject7Hospitality">Hospitality</ion-select-option>
+                  <ion-select-option value="subject7InformationTech">Information Tech</ion-select-option>
+                  <ion-select-option value="subject7LifeScience">Life Science</ion-select-option>
+                  <ion-select-option value="subject7MarineScience">Marine Sciences</ion-select-option>
+                  <ion-select-option value="subject7MechanicalTech">Mechanical Tech</ion-select-option>
+                  <ion-select-option value="subject7Music">Music</ion-select-option>
+                  <ion-select-option value="subject7PhysicalScience">Physical Sciences</ion-select-option>
+                  <ion-select-option value="subject7ReligionStudies">Religion Studies</ion-select-option>
+                  <ion-select-option value="subject7Tourism">Tourism</ion-select-option>
+                  <ion-select-option value="subject7VisualArts">Visual Arts</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </td>
+            <td>
+              <ion-item lines="none">
+                <ion-select [(ngModel)]="subjectSeven[1]">
+                  <ion-select-option value="subject7_level8">90% - 100%</ion-select-option>
+                  <ion-select-option value="subject7_level7">80% - 89%</ion-select-option>
+                  <ion-select-option value="subject7_level6">70% - 79%</ion-select-option>
+                  <ion-select-option value="subject7_level5">60% - 69%</ion-select-option>
+                  <ion-select-option value="subject7_level4">50% - 59%</ion-select-option>
+                  <ion-select-option value="subject7_level3">40% - 49%</ion-select-option>
+                  <ion-select-option value="subject7_level2">30% - 39%</ion-select-option>
+                  <ion-select-option value="subject7_level1">0% - 29%</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <div *ngIf="hasScoreBeenCalculated">
+        <ion-text class="ion-text-center">
+          <h1>{{ apsScore }}</h1>
+        </ion-text>
+        <hr>
+      </div>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="4" class="ion-text-center">
+            <ion-icon size="large" name="calculator" id="bg-blue" (click)="calculateAPS()"></ion-icon>
+            <br>
+            <ion-text class="ion-text-center">
+              <h3>Calculate</h3>
+            </ion-text>
+          </ion-col>
+          <ion-col size="4" class="ion-text-center">
+            <ion-icon size="large" name="list" id="bg-lightblue" (click)="featureCurrentlyUnavailable()"></ion-icon>
+            <br>
+            <ion-text class="ion-text-center">
+              <h3>Courses</h3>
+            </ion-text>
+          </ion-col>
+          <ion-col size="4" class="ion-text-center">
+            <ion-icon size="large" name="mail" id="bg-red" (click)="featureCurrentlyUnavailable()"></ion-icon>
+            <br>
+            <ion-text class="ion-text-center">
+              <h3>Email</h3>
+            </ion-text>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  <!-- APS Information -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Calculating your aps score</ion-card-subtitle>
+      <ion-text class="ion-text-center">
+        <ion-card-title>APS Score?</ion-card-title>
+      </ion-text>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-text>
+        <p>
+          “What is my APS?” is a question that most Matric pupils and first
+          time students want to know the answer to when applying to study at a university.
+        </p><br>
+        <p>
+           APS stands for Admission Point Score. In South Africa, universities
+          use APS points as one of the tools to see if applicants qualify for
+          their respective programmes. This is a unique APS calculator that
+          you can use to work out your score.
+        </p><br>
+        <p>
+          To calculate your APS, you’ll need to add your six best subjects,
+          excluding Life Orientation. The points you get for each course will
+          depend on the percentage you score in that particular subject.
+          The APS score is the total points you receive from each course.
+        </p>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+  <!-- APS Information Tabulated -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Matric Subject Symbol</ion-card-subtitle>
+      <ion-text class="ion-text-center">
+        <ion-card-title>Matric Exam Mark</ion-card-title>
+      </ion-text>
+    </ion-card-header>
+
+    <ion-card-content>
+      <table class="table table-dark table-striped table-hover">
+        <thead>
+          <tr>
+            <th scope="col"  class="ion-text-center">#</th>
+            <th scope="col" class="ion-text-center">Subject Symbol</th>
+            <th scope="col" class="ion-text-center">APS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"  class="ion-text-center">A</th>
+            <td class="ion-text-center">80% - 100%</td>
+            <td class="ion-text-center">7</td>
+          </tr>
+          <tr>
+            <th scope="row"  class="ion-text-center">B</th>
+            <td class="ion-text-center">70% - 79%</td>
+            <td class="ion-text-center">6</td>
+          </tr>
+          <tr>
+            <th scope="row"  class="ion-text-center">C</th>
+            <td class="ion-text-center">60% - 69%</td>
+            <td class="ion-text-center">6</td>
+          </tr>
+          <tr>
+            <th scope="row"  class="ion-text-center">D</th>
+            <td class="ion-text-center">50% - 59%</td>
+            <td class="ion-text-center">4</td>
+          </tr>
+          <tr>
+            <th scope="row"  class="ion-text-center">E</th>
+            <td class="ion-text-center">40% - 49%</td>
+            <td class="ion-text-center">3</td>
+          </tr>
+          <tr>
+            <th scope="row"  class="ion-text-center">F</th>
+            <td class="ion-text-center">30% - 39%</td>
+            <td class="ion-text-center">2</td>
+          </tr>
+          <tr>
+            <th scope="row"  class="ion-text-center">G</th>
+            <td class="ion-text-center">0% - 29%</td>
+            <td class="ion-text-center">1</td>
+          </tr>
+        </tbody>
+      </table>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

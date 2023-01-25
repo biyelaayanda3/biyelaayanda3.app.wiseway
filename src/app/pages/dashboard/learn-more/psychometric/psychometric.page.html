@@ -1,0 +1,156 @@
+<ion-header>
+  <ion-toolbar color="dark" class="p-3">
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon size="large" name="easel"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <h1 class="nav navbar-brand">Psychometric Assessment</h1>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onCancel()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Banner Image -->
+  <ion-img src="../../../../../assets/images/psychometric/banner.jpg"></ion-img>
+  <!-- Heading -->
+
+  <!-- Body -->
+  <ion-card>
+    <ion-card-content>
+      <ion-text>
+        <p>
+          This programme uses both computerised and written psychometric assessment tools
+          to evaluate your aptitude, interests, personality and values.
+          The Psychometric Career Assessments offered by the Counselling & Careers Development
+          Unit are suitable for the following individuals:
+        </p>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+  <ion-card color="dark">
+    <ion-card-content>
+      <ion-text>
+        <ul>
+          <li>Grade 9 learners having to make subject choice decisions</li>
+          <li>Grade 11 & 12 considering post-school options</li>
+          <li>Current university students</li>
+          <li>Adults considering mid-career changes</li>
+        </ul>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <ion-text>
+        <p>
+          This is a holistic programme that also includes consideration of biographical and emotional
+          information in order to facilitate comprehensive and effective career planning. Client results,
+          career plans and concerns will be discussed in an individual counselling feedback session with a
+          professional. Parents or partners are welcome to attend the latter 45 minutes of the feedback session.
+        </p>
+        <p>
+          Sessions: This programme is conducted over 2 sessions, session 1 for the Assessment and session 2 for the
+          Feedback. An appointment for the feedback session is made on the day of the assessment.
+        </p>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+  <!-- Accordion -->
+  <div class="container">
+    <!-- When -->
+    <ion-accordion-group>
+      <ion-accordion value="when">
+        <ion-item slot="header" color="dark">
+          <ion-label>When</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <ion-text class="ion-text-center">
+            <p>
+              The programme runs from January to mid-December.
+              Assessments are conducted mostly on Wednesdays, Thursdays and Fridays.
+            </p>
+          </ion-text>
+          <ion-button expand="block" fill="outline" (click)="featureCurrentlyUnavailable()">
+            <ion-icon slot="start" name="mail-outline"></ion-icon>
+            Availability Schedule
+          </ion-button>
+        </div>
+      </ion-accordion>
+      <!-- Booking & Payment -->
+      <ion-accordion value="bookingPayment">
+        <ion-item slot="header" color="dark">
+          <ion-label>Booking & Payment</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <ion-text class="ion-text-center">
+            <p>
+              Bookings for the assessment programme are done through the Counselling
+              and Careers Development Unit.
+            </p>
+            </ion-text>
+            <ion-button expand="block" fill="outline" color="secondary" (click)="featureCurrentlyUnavailable()">
+              <ion-icon slot="start" name="mail-outline"></ion-icon>
+              Booking - Payement Details
+            </ion-button>
+        </div>
+      </ion-accordion>
+      <!-- Fee Structure -->
+      <ion-accordion value="feeStructure">
+        <ion-item slot="header" color="dark">
+          <ion-label>Fee Structures</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <!-- <ion-text>
+            <p>
+              ...
+            </p>
+          </ion-text> -->
+          <ion-button expand="block" fill="outline" color="tertairy" (click)="featureCurrentlyUnavailable()">
+            <ion-icon slot="start" name="mail-outline"></ion-icon>
+            Fee Structure Enquiry
+          </ion-button>
+        </div>
+      </ion-accordion>
+      <!-- Counselling & Assessment Outcomes -->
+      <ion-accordion value="careerCounsellingAssessment">
+        <ion-item slot="header" color="dark" class="pb-3">
+          <ion-label>Counselling & Assessment Outcomes</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <ion-text>
+            <p class="text-center">
+              Individuals using the Career Counselling services offered
+              by the Counselling and Careers Development Unit can be assured of the following:
+            </p>
+            <ul>
+              <li>Confidentiality and objective information that you can apply to your career-pathing.</li>
+              <li>We do not promise any magical solutions or quick fixes!</li>
+              <li>No personalized reports are provided for the psychometric career assessment. Instead, clients will receive results, computer-generated reports and appropriate reading material relevant to the client.</li>
+              <li>No decisions or choices will be made for you - this is your opportunity to clarify your concerns.</li>
+            </ul>
+          </ion-text>
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+  </div>
+  <!-- Courtesy -->
+  <ion-list>
+    <ion-item-divider class="ion-padding" color="dark">
+      <ion-label>Powered By</ion-label>
+    </ion-item-divider>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="2"></ion-col>
+        <ion-col size="8">
+          <ion-img src="../../../../../assets/images/wiseway.jpeg"></ion-img>
+        </ion-col>
+        <ion-col size="2"></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+</ion-content>
